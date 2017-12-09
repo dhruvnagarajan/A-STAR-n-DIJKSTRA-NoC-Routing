@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <vector>
-#include <string>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -28,7 +25,7 @@ string genetic_new_path (struct Flit, int [][SIZE]);
 void genetic_new_path_dfs (struct Flit, bool [][SIZE], int [][SIZE], string, vector <string>, char);
 int genetic_new_path_fitness (string, string);
 string genetic_new_path_fitness_dfs (struct Flit, int [][SIZE]);
-void genetic_new_path_crossover (struct Flit, int [][SIZE]);
+vector <string> genetic_new_path_crossover (string, string);
 
 void grid_init (int [][SIZE]);
 void grid_node_failure (int [][SIZE]);
@@ -124,17 +121,30 @@ void genetic_new_path_dfs (struct Flit flit, bool visited[][SIZE], int grid[][SI
     visited[flit.source.x][flit.source.y] = false;
 }
 
+vector <string> genetic_new_path_crossover (string one, string two) {
+
+    // todo: upgrade
+
+    vector <string> paths;
+
+    // perform custom crossover
+    paths.push_back (one);
+    paths.push_back (two);
+
+    return paths;
+}
+
 int genetic_new_path_fitness (string path, string fit_path) {
 
     int diff = 0;
 
-    int path_len = path.length (), fit_path_len = fit_path.length ();
+    int path_len = path.length (), fit_path_len = fit_path.length (); // todo: remove 2? path includes 'S' and 'E'
 
     diff += fit_path_len - path_len; // assuming fit_path is the shortest path
 
-    for (int i = 0; i < path_len && i < fit_path_len; i ++) {
+    for (int i = 0; i < path_len - 1 && i < fit_path_len; i ++) { // todo: remove i < path_len -1? '-1' for 'E' in path
 
-        if (path[i] != fit_path[i]) diff ++;
+        if (path[i + 1] != fit_path[i]) diff ++;
     }
 
     return diff;
@@ -155,12 +165,24 @@ string genetic_new_path (struct Flit flit, int grid[][SIZE]) {
     // todo: pass paths matrix as reference
     genetic_new_path_dfs (flit, visited, grid, curr_path, paths, 'S'); // todo: receive paths matrix from dfs
 
-    vector <string> parents;
+    vector < pair <int, string> > fit_paths;
+
+    // find top 2 best off springs
 
     for (int i = 0; i < paths.size (); i ++) {
 
-        int fitness_of_path = genetic_new_path_fitness (paths[i], fit_path);
+        fit_paths.push_back (make_pair (genetic_new_path_fitness (paths[i], fit_path), paths[i]));
     }
+
+    // most fit paths are towards the end of the list
+    sort (fit_paths.begin (), fit_paths .end ());
+
+    int number_of_offsprings = fit_paths.size ();
+
+    // currently 'offsprings' will contain only one best path
+    vector <string> offsprings = genetic_new_path_crossover (fit_paths[number_of_offsprings - 1].second, fit_paths[number_of_offsprings - 2].second);
+
+    return offsprings[0];
 }
 
 struct Point deliver_direction (struct Flit flit) {
