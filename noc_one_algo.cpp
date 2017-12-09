@@ -1,8 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <vector>
+#include <string>
 
-int SIZE = 16;
-int point[1][1];
+using namespace std;
+
+const int SIZE = 16;
+
+// struct used to easily break the code. Hard to do, with class members
 
 struct Point {
 
@@ -17,11 +22,15 @@ struct Flit {
 };
 
 int deliver (struct Flit, int [][SIZE]);
-struct Point deliver_direction (struct Flit);
-void deliver_new_path (struct Flit, int [][SIZE]);
-void deliver_new_path_dfs (struct Flit, int [][SIZE], int [][SIZE], int *);
-void deliver_new_path_fitness (struct Flit, int [][SIZE]);
-void grid_init ();
+bool deliver_check_path_fail (string, int [][SIZE]);
+
+string genetic_new_path (struct Flit, int [][SIZE]);
+void genetic_new_path_dfs (struct Flit, bool [][SIZE], int [][SIZE], string, vector <string>, char);
+int genetic_new_path_fitness (string, string);
+string genetic_new_path_fitness_dfs (struct Flit, int [][SIZE]);
+void genetic_new_path_crossover (struct Flit, int [][SIZE]);
+
+void grid_init (int [][SIZE]);
 void grid_node_failure (int [][SIZE]);
 
 int main () {
@@ -39,9 +48,12 @@ int main () {
         // for every 'flit' that has to be delivered from source 's' to destination 'd'...
         struct Flit flit;
 
-        // todo: set flit source and destination, and payload
-        
+        // todo: set flit source and destination, and payload using rand ()
+        flit.source.x = flit.source.y = flit.destination.x = flit.destination.y = 0;
+
         printf ("Delivering new random flit\n");
+
+        string path = genetic_new_path (flit, grid);
         
         int hasBeenDelivered = deliver (flit, grid);
 
@@ -57,23 +69,18 @@ int main () {
     return 0;
 }
 
-void deliver_new_path_dfs (struct Flit flit, int visited[][SIZE], int grid[][SIZE], char * paths, int * number_of_paths, char direction, int curr_path_charIndex) {
-
-    // add to path[number_of_paths][];
-    * paths = (char *) realloc (paths, (* number_of_paths) * (curr_path_charIndex ++) * sizeof (char));
+void genetic_new_path_dfs (struct Flit flit, bool visited[][SIZE], int grid[][SIZE], string curr_path, vector <string> paths, char direction) {
+    
+    curr_path += direction;
 
     // store all paths that end at flit.destination
-    // todo: store all paths that end at flit.destination
     if (flit.source.x == flit.destination.x && flit.source.y == flit.destination.y) {
-
-        // add this path to vector
-        // append to path matrix from function call
-        // i ++. then add to paths matrix
-        * number_of_paths ++;
+    
+        paths.push_back (curr_path);
     }
 
     // mark current node as visited
-    visited[flit.source.x][flit.source.y] = 1;
+    visited[flit.source.x][flit.source.y] = true;
 
     for (int i = flit.source.x - 1; i <= flit.source.x + 1; i ++) {
 
@@ -82,7 +89,7 @@ void deliver_new_path_dfs (struct Flit flit, int visited[][SIZE], int grid[][SIZ
             // currently loop running for all 8 directions
 
             // check for only 4 directions, and discard diagonal advancements
-            if ((i >= 0 && j >= 0 && i < SIZE && j < SIZE)) { // DFS movement to be strictly inside the grid
+            if (i >= 0 && j >= 0 && i < SIZE && j < SIZE) { // DFS movement to be strictly inside the grid
 
                 // copy flit so as to not alter the original flit, for next DFS iteration
                 struct Flit flit_copy = flit;
@@ -92,44 +99,68 @@ void deliver_new_path_dfs (struct Flit flit, int visited[][SIZE], int grid[][SIZ
                 if (i == flit.source.x - 1 && j == flit.source.y) {
                     
                     // if left
-                    deliver_new_path_dfs (flit_copy, visited, grid, & paths, & number_of_paths, 'L', curr_path_charIndex);
+                    genetic_new_path_dfs (flit_copy, visited, grid, curr_path, paths, 'L');
                 } else if (i == flit.source.x + 1 && j == flit.source.y) {
                     
                     // if right
-                    deliver_new_path_dfs (flit_copy, visited, grid, & paths, & number_of_paths, 'R', curr_path_charIndex);
+                    genetic_new_path_dfs (flit_copy, visited, grid, curr_path, paths, 'R');
                 } else if (i == flit.source.x && j == flit.source.y - 1) {
                     
                     // if up
-                    deliver_new_path_dfs (flit_copy, visited, grid, & paths, & number_of_paths, 'U', curr_path_charIndex);
+                    genetic_new_path_dfs (flit_copy, visited, grid, curr_path, paths, 'U');
                 } else if (i == flit.source.x && j == flit.source.y + 1) {
                     
                     // if down
-                    deliver_new_path_dfs (flit_copy, visited, grid, & paths, & number_of_paths, 'D', curr_path_charIndex);
+                    genetic_new_path_dfs (flit_copy, visited, grid, curr_path, paths, 'D');
                 }
             }
         }
     }
+
+    // erase all paths for new set of paths in recurrsion
+    curr_path = "";
+
+    // marks curr node unvisited, for some other DFS path to go through this node
+    visited[flit.source.x][flit.source.y] = false;
 }
 
-void deliver_new_path (struct Flit flit, int grid[][SIZE]) {
+int genetic_new_path_fitness (string path, string fit_path) {
 
-    // start a new DFS from current flit node
+    int diff = 0;
 
-    int visited[SIZE][SIZE];
+    int path_len = path.length (), fit_path_len = fit_path.length ();
 
-    for (int i = 0; i < SIZE; i ++) {
+    diff += fit_path_len - path_len; // assuming fit_path is the shortest path
 
-        for (int j = 0; j < SIZE; j ++) {
+    for (int i = 0; i < path_len && i < fit_path_len; i ++) {
 
-            visited[i][j] = 0;
-        }
+        if (path[i] != fit_path[i]) diff ++;
     }
 
-    int number_of_paths = 0;
-    char * paths = malloc (number_of_paths * sizeof (char));
+    return diff;
+}
+
+string genetic_new_path (struct Flit flit, int grid[][SIZE]) {
+
+    // calculate best path using fitness_dfs ()
+
+    string fit_path = genetic_new_path_fitness_dfs (flit, grid);
+
+    // start a new DFS from current flit node
+    bool visited[SIZE][SIZE] = {{ false }};
+    
+    vector <string> paths;
+    string curr_path = "";
 
     // todo: pass paths matrix as reference
-    deliver_new_path_dfs (flit, visited, grid, paths, &number_of_paths); // todo: receive paths matrix from dfs
+    genetic_new_path_dfs (flit, visited, grid, curr_path, paths, 'S'); // todo: receive paths matrix from dfs
+
+    vector <string> parents;
+
+    for (int i = 0; i < paths.size (); i ++) {
+
+        int fitness_of_path = genetic_new_path_fitness (paths[i], fit_path);
+    }
 }
 
 struct Point deliver_direction (struct Flit flit) {
@@ -143,6 +174,20 @@ struct Point deliver_direction (struct Flit flit) {
 
     // todo: best parents?
     // todo: cross over?
+}
+
+bool deliver_check_path_fail (struct Point curr_pos, string path, int grid[][SIZE]) {
+
+    for (int i = 0; i < path.size (); i ++) {
+
+        bool doesNodeFailFallInOurPath =    (path[i] == 'U' && grid[curr_pos.x + 1][curr_pos.y]) ||
+                                            (path[i] == 'D' && grid[curr_pos.x - 1][curr_pos.y]) ||
+                                            (path[i] == 'L' && grid[curr_pos.x][curr_pos.y - 1]) ||
+                                            (path[i] == 'R' && grid[curr_pos.x][curr_pos.y + 1]);
+        if (doesNodeFailFallInOurPath) return false;
+    }
+
+    return true;
 }
 
 int deliver (struct Flit flit, int grid[][SIZE]) {
@@ -163,7 +208,7 @@ int deliver (struct Flit flit, int grid[][SIZE]) {
     if (1) {
 
         // check if any node has failed in our original path
-        // call deliver_new_path () ?
+        // call genetic_new_path () ?
 
         // check if (i, j) == 0
     } else {
@@ -182,7 +227,7 @@ void grid_node_failure (int grid[][SIZE]) {
 
     // todo: comporess bw 0 - SIZE. Convert into 'int'
 
-    grid[point_x][point_y] = -1; // 0: node functional, -1: node failed
+    grid[point_x][point_y] = 0; // 1: node functional, 0: node failed
 }
 
 void grid_init (int grid[][SIZE]) {
@@ -191,7 +236,7 @@ void grid_init (int grid[][SIZE]) {
 
         for (int j = 0; j < SIZE; j ++) {
 
-            grid[i][j] = 0; // 0: node functional, -1: node failed (controlled by grid_node_failure ())
+            grid[i][j] = 1; // 1: node functional, 0: node failed (controlled by grid_node_failure ())
         }
     }
 }
