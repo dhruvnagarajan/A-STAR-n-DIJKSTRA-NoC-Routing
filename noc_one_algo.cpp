@@ -18,7 +18,8 @@ struct Flit {
     struct Point source, destination;
 };
 
-int deliver (struct Flit, int [][SIZE]);
+bool deliver (struct Flit, int [][SIZE], string);
+struct Point deliver_direction (struct Flit, string, int);
 bool deliver_check_path_fail (string, int [][SIZE]);
 
 string genetic_new_path (struct Flit, int [][SIZE]);
@@ -52,7 +53,7 @@ int main () {
 
         string path = genetic_new_path (flit, grid);
         
-        int hasBeenDelivered = deliver (flit, grid);
+        int hasBeenDelivered = deliver (flit, grid, path, path[1]); // path[0] contains 'S' as in 'start': for debugging purposes
 
         if (hasBeenDelivered) {
 
@@ -185,49 +186,70 @@ string genetic_new_path (struct Flit flit, int grid[][SIZE]) {
     return offsprings[0];
 }
 
-struct Point deliver_direction (struct Flit flit) {
+struct Point deliver_direction (struct Flit flit, string path, int curr_node_in_path) {
 
     // calculates flit movement direction at every node in transmission
     // U: up, D: down, L: left, R: right
 
-    // calls delivery_util_path
+    char direction = path[curr_node_in_path];
 
-    // return point as in (i, j) to deliver ()
+    struct Point point;
+    point.x = flit.source.x, point.y = flit.source.y;
 
-    // todo: best parents?
-    // todo: cross over?
+    if (direction == 'U') {
+
+        point.y += 1;
+    } else if (direction == 'D') {
+
+        point.y -= 1;
+    } else if (direction == 'L') {
+
+        point.x -= 1;
+    } else if (direction == 'R') {
+
+        point.x += 1;
+    }
+
+    return point;
 }
 
-bool deliver_check_path_fail (struct Point curr_pos, string path, int grid[][SIZE]) {
+bool deliver_check_path_fail (struct Flit flit, string path, int grid[][SIZE]) {
 
     for (int i = 0; i < path.size (); i ++) {
 
-        bool doesNodeFailFallInOurPath =    (path[i] == 'U' && grid[curr_pos.x + 1][curr_pos.y]) ||
-                                            (path[i] == 'D' && grid[curr_pos.x - 1][curr_pos.y]) ||
-                                            (path[i] == 'L' && grid[curr_pos.x][curr_pos.y - 1]) ||
-                                            (path[i] == 'R' && grid[curr_pos.x][curr_pos.y + 1]);
+        int curr_x = flit.source.x, curr_y = flit.source.y;
+
+        // check if node at next hop is okay. Return false if it is not
+        bool doesNodeFailFallInOurPath =    (path[i] == 'U' && grid[curr_x + 1][curr_y]) ||
+
+    // todo: best parents?
+    // todo: cross over?
+                                            (path[i] == 'D' && grid[curr_x - 1][curr_y]) ||
+                                            (path[i] == 'L' && grid[curr_x][curr_y - 1]) ||
+                                            (path[i] == 'R' && grid[curr_x][curr_y + 1]);
         if (doesNodeFailFallInOurPath) return false;
     }
 
     return true;
 }
 
-int deliver (struct Flit flit, int grid[][SIZE]) {
+bool deliver (struct Flit flit, int grid[][SIZE], string path, int curr_node_in_path) {
 
     if (flit.source.x == flit.destination.x && flit.source.y == flit.destination.y) {
 
-        return 1; // 1: delivered
+        return true; // delivered
     } else if (0/*todo: no more paths*/) {
 
-        return 0; // 0: delivery failed
+        return false; // delivery failed
     }
 
     // next hop is determined by deliver_direction ()
-    struct Point direction = deliver_direction (flit); // 4 directions
+    struct Point direction = deliver_direction (flit, path, curr_node_in_path); // 4 directions
 
     grid_node_failure (grid); // randomly switches off nodes in the grid, one at a time
 
-    if (1) {
+    // check if next hop is okay or failed
+    if (deliver_check_path_fail (flit, path, grid)) {
 
         // check if any node has failed in our original path
         // call genetic_new_path () ?
@@ -236,6 +258,8 @@ int deliver (struct Flit flit, int grid[][SIZE]) {
     } else {
 
         // otherwise: continue original path
+        flit.source.x = direction.x, flit.source.y = direction.y;
+        deliver (flit, grid, path, curr_node_in_path + 1);
     }
 
     // update filt.source to curr grid(i, j)
