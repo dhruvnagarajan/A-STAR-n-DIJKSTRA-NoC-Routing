@@ -2,7 +2,7 @@
 
 using namespace std;
 
-const int SIZE = 16;
+const int SIZE = 4;
 
 // struct used to easily break the code. Hard to do, with class members
 
@@ -18,7 +18,7 @@ struct Flit {
     struct Point source, destination;
 };
 
-bool deliver (struct Flit, int [][SIZE], string);
+bool deliver (struct Flit, int [][SIZE], string, int);
 struct Point deliver_direction (struct Flit, string, int);
 bool deliver_check_path_fail (string, int [][SIZE]);
 
@@ -32,6 +32,8 @@ void grid_init (int [][SIZE]);
 void grid_node_failure (int [][SIZE]);
 
 int main () {
+
+    cout << ":: Main ()\n";
 
     // grid setup
     int grid[SIZE][SIZE];
@@ -53,7 +55,7 @@ int main () {
 
         string path = genetic_new_path (flit, grid);
         
-        int hasBeenDelivered = deliver (flit, grid, path, path[1]); // path[0] contains 'S' as in 'start': for debugging purposes
+        int hasBeenDelivered = deliver (flit, grid, path, 1); // path[0] contains 'S' as in 'start': for debugging purposes
 
         if (hasBeenDelivered) {
 
@@ -69,11 +71,14 @@ int main () {
 
 void genetic_new_path_dfs (struct Flit flit, bool visited[][SIZE], int grid[][SIZE], string curr_path, vector <string> paths, char direction) {
     
+    cout << ":: DFS ()\n";
+
     curr_path += direction;
 
     // store all paths that end at flit.destination
     if (flit.source.x == flit.destination.x && flit.source.y == flit.destination.y) {
     
+        cout << ":: DFS path found:\t" << curr_path << endl;
         paths.push_back (curr_path);
     }
 
@@ -124,6 +129,8 @@ void genetic_new_path_dfs (struct Flit flit, bool visited[][SIZE], int grid[][SI
 
 vector <string> genetic_new_path_crossover (string one, string two) {
 
+    cout << ":: Crossover ()\n";
+
     // todo: upgrade
 
     vector <string> paths;
@@ -136,6 +143,8 @@ vector <string> genetic_new_path_crossover (string one, string two) {
 }
 
 int genetic_new_path_fitness (string path, string fit_path) {
+
+    cout << ":: Fitness ()\n";
 
     int diff = 0;
 
@@ -151,11 +160,22 @@ int genetic_new_path_fitness (string path, string fit_path) {
     return diff;
 }
 
+string genetic_new_path_best (struct Flit flit, int grid[][SIZE]) {
+
+    cout << ":: Fitness () - BestPath ()\n";
+
+    string fit_path = "";
+
+    return fit_path;
+}
+
 string genetic_new_path (struct Flit flit, int grid[][SIZE]) {
+
+    cout << ":: New Path ()\n";
 
     // calculate best path using fitness_dfs ()
 
-    string fit_path = genetic_new_path_fitness_dfs (flit, grid);
+    string fit_path = genetic_new_path_best (flit, grid);
 
     // start a new DFS from current flit node
     bool visited[SIZE][SIZE] = {{ false }};
@@ -188,6 +208,8 @@ string genetic_new_path (struct Flit flit, int grid[][SIZE]) {
 
 struct Point deliver_direction (struct Flit flit, string path, int curr_node_in_path) {
 
+    cout << ":: GetDirection ()\n";
+
     // calculates flit movement direction at every node in transmission
     // U: up, D: down, L: left, R: right
 
@@ -215,6 +237,8 @@ struct Point deliver_direction (struct Flit flit, string path, int curr_node_in_
 
 bool deliver_check_path_fail (struct Flit flit, string path, int grid[][SIZE]) {
 
+    cout << ":: Check node failure ()\n";
+
     for (int i = 0; i < path.size (); i ++) {
 
         int curr_x = flit.source.x, curr_y = flit.source.y;
@@ -235,6 +259,8 @@ bool deliver_check_path_fail (struct Flit flit, string path, int grid[][SIZE]) {
 
 bool deliver (struct Flit flit, int grid[][SIZE], string path, int curr_node_in_path) {
 
+    cout << ":: Deliver ()\n";
+
     if (flit.source.x == flit.destination.x && flit.source.y == flit.destination.y) {
 
         return true; // delivered
@@ -254,18 +280,24 @@ bool deliver (struct Flit flit, int grid[][SIZE], string path, int curr_node_in_
         // check if any node has failed in our original path
         // call genetic_new_path () ?
 
+        path = genetic_new_path (flit, grid);
+
         // check if (i, j) == 0
     } else {
 
         // otherwise: continue original path
-        flit.source.x = direction.x, flit.source.y = direction.y;
-        deliver (flit, grid, path, curr_node_in_path + 1);
+        
+        flit.source.x = direction.x, flit.source.y = direction.y; // flit has virtually been moved to new node
+        
+        deliver (flit, grid, path, curr_node_in_path + 1); // do the same thing for next hop
     }
 
     // update filt.source to curr grid(i, j)
 }
 
 void grid_node_failure (int grid[][SIZE]) {
+
+    cout << ":: CreateNodeFailure()\n";
 
     // failed nodes do not become functional later
 
@@ -277,6 +309,8 @@ void grid_node_failure (int grid[][SIZE]) {
 }
 
 void grid_init (int grid[][SIZE]) {
+
+    cout << ":: GridInit ()\n";
 
     for (int i = 0; i < SIZE; i ++) {
 
