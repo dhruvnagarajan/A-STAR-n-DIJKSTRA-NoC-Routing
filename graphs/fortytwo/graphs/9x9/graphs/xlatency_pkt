@@ -1,0 +1,5756 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: results/graphs/xlatency_pkt
+%%Creator: gnuplot 5.0 patchlevel 3
+%%CreationDate: Sun Dec 10 14:17:06 2017
+%%DocumentFonts: (atend)
+%%BoundingBox: 50 50 410 302
+%%EndComments
+%%BeginProlog
+/gnudict 256 dict def
+gnudict begin
+%
+% The following true/false flags may be edited by hand if desired.
+% The unit line width and grayscale image gamma correction may also be changed.
+%
+/Color true def
+/Blacktext false def
+/Solid false def
+/Dashlength 1 def
+/Landscape false def
+/Level1 false def
+/Level3 false def
+/Rounded false def
+/ClipToBoundingBox false def
+/SuppressPDFMark false def
+/TransparentPatterns false def
+/gnulinewidth 5.000 def
+/userlinewidth gnulinewidth def
+/Gamma 1.0 def
+/BackgroundColor {-1.000 -1.000 -1.000} def
+%
+/vshift -46 def
+/dl1 {
+  10.0 Dashlength userlinewidth gnulinewidth div mul mul mul
+  Rounded { currentlinewidth 0.75 mul sub dup 0 le { pop 0.01 } if } if
+} def
+/dl2 {
+  10.0 Dashlength userlinewidth gnulinewidth div mul mul mul
+  Rounded { currentlinewidth 0.75 mul add } if
+} def
+/hpt_ 31.5 def
+/vpt_ 31.5 def
+/hpt hpt_ def
+/vpt vpt_ def
+/doclip {
+  ClipToBoundingBox {
+    newpath 50 50 moveto 410 50 lineto 410 302 lineto 50 302 lineto closepath
+    clip
+  } if
+} def
+%
+% Gnuplot Prolog Version 5.1 (Oct 2015)
+%
+%/SuppressPDFMark true def
+%
+/M {moveto} bind def
+/L {lineto} bind def
+/R {rmoveto} bind def
+/V {rlineto} bind def
+/N {newpath moveto} bind def
+/Z {closepath} bind def
+/C {setrgbcolor} bind def
+/f {rlineto fill} bind def
+/g {setgray} bind def
+/Gshow {show} def   % May be redefined later in the file to support UTF-8
+/vpt2 vpt 2 mul def
+/hpt2 hpt 2 mul def
+/Lshow {currentpoint stroke M 0 vshift R 
+	Blacktext {gsave 0 setgray textshow grestore} {textshow} ifelse} def
+/Rshow {currentpoint stroke M dup stringwidth pop neg vshift R
+	Blacktext {gsave 0 setgray textshow grestore} {textshow} ifelse} def
+/Cshow {currentpoint stroke M dup stringwidth pop -2 div vshift R 
+	Blacktext {gsave 0 setgray textshow grestore} {textshow} ifelse} def
+/UP {dup vpt_ mul /vpt exch def hpt_ mul /hpt exch def
+  /hpt2 hpt 2 mul def /vpt2 vpt 2 mul def} def
+/DL {Color {setrgbcolor Solid {pop []} if 0 setdash}
+ {pop pop pop 0 setgray Solid {pop []} if 0 setdash} ifelse} def
+/BL {stroke userlinewidth 2 mul setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+/AL {stroke userlinewidth 2 div setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+/UL {dup gnulinewidth mul /userlinewidth exch def
+	dup 1 lt {pop 1} if 10 mul /udl exch def} def
+/PL {stroke userlinewidth setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+3.8 setmiterlimit
+% Classic Line colors (version 5.0)
+/LCw {1 1 1} def
+/LCb {0 0 0} def
+/LCa {0 0 0} def
+/LC0 {1 0 0} def
+/LC1 {0 1 0} def
+/LC2 {0 0 1} def
+/LC3 {1 0 1} def
+/LC4 {0 1 1} def
+/LC5 {1 1 0} def
+/LC6 {0 0 0} def
+/LC7 {1 0.3 0} def
+/LC8 {0.5 0.5 0.5} def
+% Default dash patterns (version 5.0)
+/LTB {BL [] LCb DL} def
+/LTw {PL [] 1 setgray} def
+/LTb {PL [] LCb DL} def
+/LTa {AL [1 udl mul 2 udl mul] 0 setdash LCa setrgbcolor} def
+/LT0 {PL [] LC0 DL} def
+/LT1 {PL [2 dl1 3 dl2] LC1 DL} def
+/LT2 {PL [1 dl1 1.5 dl2] LC2 DL} def
+/LT3 {PL [6 dl1 2 dl2 1 dl1 2 dl2] LC3 DL} def
+/LT4 {PL [1 dl1 2 dl2 6 dl1 2 dl2 1 dl1 2 dl2] LC4 DL} def
+/LT5 {PL [4 dl1 2 dl2] LC5 DL} def
+/LT6 {PL [1.5 dl1 1.5 dl2 1.5 dl1 1.5 dl2 1.5 dl1 6 dl2] LC6 DL} def
+/LT7 {PL [3 dl1 3 dl2 1 dl1 3 dl2] LC7 DL} def
+/LT8 {PL [2 dl1 2 dl2 2 dl1 6 dl2] LC8 DL} def
+/SL {[] 0 setdash} def
+/Pnt {stroke [] 0 setdash gsave 1 setlinecap M 0 0 V stroke grestore} def
+/Dia {stroke [] 0 setdash 2 copy vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath stroke
+  Pnt} def
+/Pls {stroke [] 0 setdash vpt sub M 0 vpt2 V
+  currentpoint stroke M
+  hpt neg vpt neg R hpt2 0 V stroke
+ } def
+/Box {stroke [] 0 setdash 2 copy exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath stroke
+  Pnt} def
+/Crs {stroke [] 0 setdash exch hpt sub exch vpt add M
+  hpt2 vpt2 neg V currentpoint stroke M
+  hpt2 neg 0 R hpt2 vpt2 V stroke} def
+/TriU {stroke [] 0 setdash 2 copy vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath stroke
+  Pnt} def
+/Star {2 copy Pls Crs} def
+/BoxF {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath fill} def
+/TriUF {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath fill} def
+/TriD {stroke [] 0 setdash 2 copy vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath stroke
+  Pnt} def
+/TriDF {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath fill} def
+/DiaF {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath fill} def
+/Pent {stroke [] 0 setdash 2 copy gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath stroke grestore Pnt} def
+/PentF {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath fill grestore} def
+/Circle {stroke [] 0 setdash 2 copy
+  hpt 0 360 arc stroke Pnt} def
+/CircleF {stroke [] 0 setdash hpt 0 360 arc fill} def
+/C0 {BL [] 0 setdash 2 copy moveto vpt 90 450 arc} bind def
+/C1 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C2 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C3 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C4 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 180 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C5 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc
+	2 copy moveto
+	2 copy vpt 180 270 arc closepath fill
+	vpt 0 360 arc} bind def
+/C6 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C7 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C8 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 270 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C9 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 270 450 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C10 {BL [] 0 setdash 2 copy 2 copy moveto vpt 270 360 arc closepath fill
+	2 copy moveto
+	2 copy vpt 90 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C11 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 180 arc closepath fill
+	2 copy moveto
+	2 copy vpt 270 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C12 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 180 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C13 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc closepath fill
+	2 copy moveto
+	2 copy vpt 180 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C14 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 360 arc closepath fill
+	vpt 0 360 arc} bind def
+/C15 {BL [] 0 setdash 2 copy vpt 0 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/Rec {newpath 4 2 roll moveto 1 index 0 rlineto 0 exch rlineto
+	neg 0 rlineto closepath} bind def
+/Square {dup Rec} bind def
+/Bsquare {vpt sub exch vpt sub exch vpt2 Square} bind def
+/S0 {BL [] 0 setdash 2 copy moveto 0 vpt rlineto BL Bsquare} bind def
+/S1 {BL [] 0 setdash 2 copy vpt Square fill Bsquare} bind def
+/S2 {BL [] 0 setdash 2 copy exch vpt sub exch vpt Square fill Bsquare} bind def
+/S3 {BL [] 0 setdash 2 copy exch vpt sub exch vpt2 vpt Rec fill Bsquare} bind def
+/S4 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt Square fill Bsquare} bind def
+/S5 {BL [] 0 setdash 2 copy 2 copy vpt Square fill
+	exch vpt sub exch vpt sub vpt Square fill Bsquare} bind def
+/S6 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt vpt2 Rec fill Bsquare} bind def
+/S7 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt vpt2 Rec fill
+	2 copy vpt Square fill Bsquare} bind def
+/S8 {BL [] 0 setdash 2 copy vpt sub vpt Square fill Bsquare} bind def
+/S9 {BL [] 0 setdash 2 copy vpt sub vpt vpt2 Rec fill Bsquare} bind def
+/S10 {BL [] 0 setdash 2 copy vpt sub vpt Square fill 2 copy exch vpt sub exch vpt Square fill
+	Bsquare} bind def
+/S11 {BL [] 0 setdash 2 copy vpt sub vpt Square fill 2 copy exch vpt sub exch vpt2 vpt Rec fill
+	Bsquare} bind def
+/S12 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill Bsquare} bind def
+/S13 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill
+	2 copy vpt Square fill Bsquare} bind def
+/S14 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill
+	2 copy exch vpt sub exch vpt Square fill Bsquare} bind def
+/S15 {BL [] 0 setdash 2 copy Bsquare fill Bsquare} bind def
+/D0 {gsave translate 45 rotate 0 0 S0 stroke grestore} bind def
+/D1 {gsave translate 45 rotate 0 0 S1 stroke grestore} bind def
+/D2 {gsave translate 45 rotate 0 0 S2 stroke grestore} bind def
+/D3 {gsave translate 45 rotate 0 0 S3 stroke grestore} bind def
+/D4 {gsave translate 45 rotate 0 0 S4 stroke grestore} bind def
+/D5 {gsave translate 45 rotate 0 0 S5 stroke grestore} bind def
+/D6 {gsave translate 45 rotate 0 0 S6 stroke grestore} bind def
+/D7 {gsave translate 45 rotate 0 0 S7 stroke grestore} bind def
+/D8 {gsave translate 45 rotate 0 0 S8 stroke grestore} bind def
+/D9 {gsave translate 45 rotate 0 0 S9 stroke grestore} bind def
+/D10 {gsave translate 45 rotate 0 0 S10 stroke grestore} bind def
+/D11 {gsave translate 45 rotate 0 0 S11 stroke grestore} bind def
+/D12 {gsave translate 45 rotate 0 0 S12 stroke grestore} bind def
+/D13 {gsave translate 45 rotate 0 0 S13 stroke grestore} bind def
+/D14 {gsave translate 45 rotate 0 0 S14 stroke grestore} bind def
+/D15 {gsave translate 45 rotate 0 0 S15 stroke grestore} bind def
+/DiaE {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath stroke} def
+/BoxE {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath stroke} def
+/TriUE {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath stroke} def
+/TriDE {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath stroke} def
+/PentE {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath stroke grestore} def
+/CircE {stroke [] 0 setdash 
+  hpt 0 360 arc stroke} def
+/Opaque {gsave closepath 1 setgray fill grestore 0 setgray closepath} def
+/DiaW {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V Opaque stroke} def
+/BoxW {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V Opaque stroke} def
+/TriUW {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V Opaque stroke} def
+/TriDW {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V Opaque stroke} def
+/PentW {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  Opaque stroke grestore} def
+/CircW {stroke [] 0 setdash 
+  hpt 0 360 arc Opaque stroke} def
+/BoxFill {gsave Rec 1 setgray fill grestore} def
+/Density {
+  /Fillden exch def
+  currentrgbcolor
+  /ColB exch def /ColG exch def /ColR exch def
+  /ColR ColR Fillden mul Fillden sub 1 add def
+  /ColG ColG Fillden mul Fillden sub 1 add def
+  /ColB ColB Fillden mul Fillden sub 1 add def
+  ColR ColG ColB setrgbcolor} def
+/BoxColFill {gsave Rec PolyFill} def
+/PolyFill {gsave Density fill grestore grestore} def
+/h {rlineto rlineto rlineto gsave closepath fill grestore} bind def
+%
+% PostScript Level 1 Pattern Fill routine for rectangles
+% Usage: x y w h s a XX PatternFill
+%	x,y = lower left corner of box to be filled
+%	w,h = width and height of box
+%	  a = angle in degrees between lines and x-axis
+%	 XX = 0/1 for no/yes cross-hatch
+%
+/PatternFill {gsave /PFa [ 9 2 roll ] def
+  PFa 0 get PFa 2 get 2 div add PFa 1 get PFa 3 get 2 div add translate
+  PFa 2 get -2 div PFa 3 get -2 div PFa 2 get PFa 3 get Rec
+  TransparentPatterns {} {gsave 1 setgray fill grestore} ifelse
+  clip
+  currentlinewidth 0.5 mul setlinewidth
+  /PFs PFa 2 get dup mul PFa 3 get dup mul add sqrt def
+  0 0 M PFa 5 get rotate PFs -2 div dup translate
+  0 1 PFs PFa 4 get div 1 add floor cvi
+	{PFa 4 get mul 0 M 0 PFs V} for
+  0 PFa 6 get ne {
+	0 1 PFs PFa 4 get div 1 add floor cvi
+	{PFa 4 get mul 0 2 1 roll M PFs 0 V} for
+ } if
+  stroke grestore} def
+%
+/languagelevel where
+ {pop languagelevel} {1} ifelse
+dup 2 lt
+	{/InterpretLevel1 true def
+	 /InterpretLevel3 false def}
+	{/InterpretLevel1 Level1 def
+	 2 gt
+	    {/InterpretLevel3 Level3 def}
+	    {/InterpretLevel3 false def}
+	 ifelse }
+ ifelse
+%
+% PostScript level 2 pattern fill definitions
+%
+/Level2PatternFill {
+/Tile8x8 {/PaintType 2 /PatternType 1 /TilingType 1 /BBox [0 0 8 8] /XStep 8 /YStep 8}
+	bind def
+/KeepColor {currentrgbcolor [/Pattern /DeviceRGB] setcolorspace} bind def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 8 8 L 0 8 M 8 0 L stroke} 
+>> matrix makepattern
+/Pat1 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 8 8 L 0 8 M 8 0 L stroke
+	0 4 M 4 8 L 8 4 L 4 0 L 0 4 L stroke}
+>> matrix makepattern
+/Pat2 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 0 8 L
+	8 8 L 8 0 L 0 0 L fill}
+>> matrix makepattern
+/Pat3 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -4 8 M 8 -4 L
+	0 12 M 12 0 L stroke}
+>> matrix makepattern
+/Pat4 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -4 0 M 8 12 L
+	0 -4 M 12 8 L stroke}
+>> matrix makepattern
+/Pat5 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -2 8 M 4 -4 L
+	0 12 M 8 -4 L 4 12 M 10 0 L stroke}
+>> matrix makepattern
+/Pat6 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -2 0 M 4 12 L
+	0 -4 M 8 12 L 4 -4 M 10 8 L stroke}
+>> matrix makepattern
+/Pat7 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 8 -2 M -4 4 L
+	12 0 M -4 8 L 12 4 M 0 10 L stroke}
+>> matrix makepattern
+/Pat8 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 -2 M 12 4 L
+	-4 0 M 12 8 L -4 4 M 8 10 L stroke}
+>> matrix makepattern
+/Pat9 exch def
+/Pattern1 {PatternBgnd KeepColor Pat1 setpattern} bind def
+/Pattern2 {PatternBgnd KeepColor Pat2 setpattern} bind def
+/Pattern3 {PatternBgnd KeepColor Pat3 setpattern} bind def
+/Pattern4 {PatternBgnd KeepColor Landscape {Pat5} {Pat4} ifelse setpattern} bind def
+/Pattern5 {PatternBgnd KeepColor Landscape {Pat4} {Pat5} ifelse setpattern} bind def
+/Pattern6 {PatternBgnd KeepColor Landscape {Pat9} {Pat6} ifelse setpattern} bind def
+/Pattern7 {PatternBgnd KeepColor Landscape {Pat8} {Pat7} ifelse setpattern} bind def
+} def
+%
+%
+%End of PostScript Level 2 code
+%
+/PatternBgnd {
+  TransparentPatterns {} {gsave 1 setgray fill grestore} ifelse
+} def
+%
+% Substitute for Level 2 pattern fill codes with
+% grayscale if Level 2 support is not selected.
+%
+/Level1PatternFill {
+/Pattern1 {0.250 Density} bind def
+/Pattern2 {0.500 Density} bind def
+/Pattern3 {0.750 Density} bind def
+/Pattern4 {0.125 Density} bind def
+/Pattern5 {0.375 Density} bind def
+/Pattern6 {0.625 Density} bind def
+/Pattern7 {0.875 Density} bind def
+} def
+%
+% Now test for support of Level 2 code
+%
+Level1 {Level1PatternFill} {Level2PatternFill} ifelse
+%
+/Symbol-Oblique /Symbol findfont [1 0 .167 1 0 0] makefont
+dup length dict begin {1 index /FID eq {pop pop} {def} ifelse} forall
+currentdict end definefont pop
+%
+/MFshow {
+   { dup 5 get 3 ge
+     { 5 get 3 eq {gsave} {grestore} ifelse }
+     {dup dup 0 get findfont exch 1 get scalefont setfont
+     [ currentpoint ] exch dup 2 get 0 exch R dup 5 get 2 ne {dup dup 6
+     get exch 4 get {textshow} {stringwidth pop 0 R} ifelse }if dup 5 get 0 eq
+     {dup 3 get {2 get neg 0 exch R pop} {pop aload pop M} ifelse} {dup 5
+     get 1 eq {dup 2 get exch dup 3 get exch 6 get stringwidth pop -2 div
+     dup 0 R} {dup 6 get stringwidth pop -2 div 0 R 6 get
+     textshow 2 index {aload pop M neg 3 -1 roll neg R pop pop} {pop pop pop
+     pop aload pop M} ifelse }ifelse }ifelse }
+     ifelse }
+   forall} def
+/Gswidth {dup type /stringtype eq {stringwidth} {pop (n) stringwidth} ifelse} def
+/MFwidth {0 exch { dup 5 get 3 ge { 5 get 3 eq { 0 } { pop } ifelse }
+ {dup 3 get{dup dup 0 get findfont exch 1 get scalefont setfont
+     6 get Gswidth pop add} {pop} ifelse} ifelse} forall} def
+/MLshow { currentpoint stroke M
+  0 exch R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/MRshow { currentpoint stroke M
+  exch dup MFwidth neg 3 -1 roll R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/MCshow { currentpoint stroke M
+  exch dup MFwidth -2 div 3 -1 roll R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/XYsave    { [( ) 1 2 true false 3 ()] } bind def
+/XYrestore { [( ) 1 2 true false 4 ()] } bind def
+Level1 SuppressPDFMark or 
+{} {
+/SDict 10 dict def
+systemdict /pdfmark known not {
+  userdict /pdfmark systemdict /cleartomark get put
+} if
+SDict begin [
+  /Title (results/graphs/xlatency_pkt)
+  /Subject (gnuplot plot)
+  /Creator (gnuplot 5.0 patchlevel 3)
+  /Author (ubuntu)
+%  /Producer (gnuplot)
+%  /Keywords ()
+  /CreationDate (Sun Dec 10 14:17:06 2017)
+  /DOCINFO pdfmark
+end
+} ifelse
+%
+% Support for boxed text - Ethan A Merritt May 2005
+%
+/InitTextBox { userdict /TBy2 3 -1 roll put userdict /TBx2 3 -1 roll put
+           userdict /TBy1 3 -1 roll put userdict /TBx1 3 -1 roll put
+	   /Boxing true def } def
+/ExtendTextBox { Boxing
+    { gsave dup false charpath pathbbox
+      dup TBy2 gt {userdict /TBy2 3 -1 roll put} {pop} ifelse
+      dup TBx2 gt {userdict /TBx2 3 -1 roll put} {pop} ifelse
+      dup TBy1 lt {userdict /TBy1 3 -1 roll put} {pop} ifelse
+      dup TBx1 lt {userdict /TBx1 3 -1 roll put} {pop} ifelse
+      grestore } if } def
+/PopTextBox { newpath TBx1 TBxmargin sub TBy1 TBymargin sub M
+               TBx1 TBxmargin sub TBy2 TBymargin add L
+	       TBx2 TBxmargin add TBy2 TBymargin add L
+	       TBx2 TBxmargin add TBy1 TBymargin sub L closepath } def
+/DrawTextBox { PopTextBox stroke /Boxing false def} def
+/FillTextBox { gsave PopTextBox 1 1 1 setrgbcolor fill grestore /Boxing false def} def
+0 0 0 0 InitTextBox
+/TBxmargin 20 def
+/TBymargin 20 def
+/Boxing false def
+/textshow { ExtendTextBox Gshow } def
+%
+% redundant definitions for compatibility with prologue.ps older than 5.0.2
+/LTB {BL [] LCb DL} def
+/LTb {PL [] LCb DL} def
+end
+%%EndProlog
+%%Page: 1 1
+gnudict begin
+gsave
+doclip
+50 50 translate
+0.050 0.050 scale
+0 setgray
+newpath
+(Helvetica) findfont 140 scalefont setfont
+BackgroundColor 0 lt 3 1 roll 0 lt exch 0 lt or or not {BackgroundColor C 1.000 0 0 7200.00 5040.00 BoxColFill} if
+1.000 UL
+LTb
+LCb setrgbcolor
+LCb setrgbcolor
+3600 4773 M
+[ [(Helvetica) 140.0 0.0 true true 0 (Average latency per packet \(clock cycles\) along E and W channels)]
+] -46.7 MCshow
+1.000 UP
+LCb setrgbcolor
+1399 1181 M
+[ [(Helvetica) 140.0 0.0 true true 0 (R1)]
+] -46.7 MLshow
+LCb setrgbcolor
+1014 1338 M
+[ [(Helvetica) 140.0 0.0 true true 0 (E)]
+] -46.7 MLshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1069 1289 M
+-23 14 V
+12 -24 V
+50 -44 R
+-62 68 V
+stroke
+gsave [] 0 setdash
+1069 1289 M
+-23 14 V
+12 -24 V
+stroke
+grestore
+% Begin plot #1
+1.000 UL
+LTb
+0.58 0.00 0.83 C 2840 2201 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3112 2166 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 2862 2213 M
+stroke
+LTb
+0.58 0.00 0.83 C 3112 2166 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 2797 2177 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 3090 2154 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 2840 2201 M
+stroke
+LTb
+0.58 0.00 0.83 C 3090 2154 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 2776 2165 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3048 2130 M
+-251 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 2797 2177 M
+stroke
+LTb
+0.58 0.00 0.83 C 3048 2130 M
+-251 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3090 2154 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3112 2166 M
+stroke
+LTb
+0.58 0.00 0.83 C 3026 2119 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 2776 2165 M
+stroke
+LTb
+0.58 0.00 0.83 C 3026 2119 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3048 2130 M
+42 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 3090 2154 M
+stroke
+LTb
+0.58 0.00 0.83 C 3257 2123 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3528 2089 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3278 2135 M
+stroke
+LTb
+0.58 0.00 0.83 C 3528 2089 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3026 2119 M
+22 11 V
+stroke
+LTb
+0.58 0.00 0.83 C 3048 2130 M
+stroke
+LTb
+0.58 0.00 0.83 C 3214 2099 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 3507 2077 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3257 2123 M
+stroke
+LTb
+0.58 0.00 0.83 C 3507 2077 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3026 2119 M
+stroke
+LTb
+0.58 0.00 0.83 C 3193 2088 M
+21 11 V
+stroke
+LTb
+0.58 0.00 0.83 C 3464 2053 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3214 2099 M
+stroke
+LTb
+0.58 0.00 0.83 C 3464 2053 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 2898 2047 M
+-97 18 V
+stroke
+LTb
+0.58 0.00 0.83 C 2898 2047 M
+-97 18 V
+stroke
+LTb
+0.58 0.00 0.83 C 3507 2077 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3528 2089 M
+stroke
+LTb
+0.58 0.00 0.83 C 3443 2041 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3193 2088 M
+stroke
+LTb
+0.58 0.00 0.83 C 3443 2041 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 2876 2035 M
+-75 14 V
+stroke
+LTb
+0.58 0.00 0.83 C 2876 2035 M
+-75 14 V
+stroke
+LTb
+0.58 0.00 0.83 C 3464 2053 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 3507 2077 M
+stroke
+LTb
+0.58 0.00 0.83 C 3673 2046 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3944 2011 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3694 2058 M
+stroke
+LTb
+0.58 0.00 0.83 C 3944 2011 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 2834 2011 M
+-33 6 V
+stroke
+LTb
+0.58 0.00 0.83 C 2834 2011 M
+-33 6 V
+stroke
+LTb
+0.58 0.00 0.83 C 3443 2041 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3464 2053 M
+stroke
+LTb
+0.58 0.00 0.83 C 2876 2035 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2898 2047 M
+stroke
+LTb
+0.58 0.00 0.83 C 3630 2022 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 3923 1999 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3673 2046 M
+stroke
+LTb
+0.58 0.00 0.83 C 3923 1999 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 2812 1999 M
+-11 2 V
+stroke
+LTb
+0.58 0.00 0.83 C 2812 1999 M
+-11 2 V
+stroke
+LTb
+0.58 0.00 0.83 C 3443 2041 M
+stroke
+LTb
+0.58 0.00 0.83 C 2834 2011 M
+42 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 2876 2035 M
+stroke
+LTb
+0.58 0.00 0.83 C 3609 2010 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3880 1976 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3630 2022 M
+stroke
+LTb
+0.58 0.00 0.83 C 3880 1976 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3315 1970 M
+-98 18 V
+stroke
+LTb
+0.58 0.00 0.83 C 3315 1970 M
+-98 18 V
+stroke
+LTb
+0.58 0.00 0.83 C 3923 1999 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3944 2011 M
+stroke
+LTb
+0.58 0.00 0.83 C 2812 1999 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2834 2011 M
+stroke
+LTb
+0.58 0.00 0.83 C 3859 1964 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3609 2010 M
+stroke
+LTb
+0.58 0.00 0.83 C 3859 1964 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3293 1958 M
+-76 14 V
+stroke
+LTb
+0.58 0.00 0.83 C 3293 1958 M
+-76 14 V
+stroke
+LTb
+0.58 0.00 0.83 C 3880 1976 M
+43 23 V
+stroke
+LTb
+0.58 0.00 0.83 C 3923 1999 M
+stroke
+LTb
+0.58 0.00 0.83 C 2812 1999 M
+stroke
+LTb
+0.58 0.00 0.83 C 4090 1968 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4361 1934 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4111 1980 M
+stroke
+LTb
+0.58 0.00 0.83 C 4361 1934 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3250 1934 M
+-33 6 V
+stroke
+LTb
+0.58 0.00 0.83 C 3250 1934 M
+-33 6 V
+stroke
+LTb
+0.58 0.00 0.83 C 3859 1964 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3880 1976 M
+stroke
+LTb
+0.58 0.00 0.83 C 2412 1962 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1957 M
+-95 17 V
+stroke
+LTb
+0.58 0.00 0.83 C 2434 1974 M
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1957 M
+-95 17 V
+stroke
+LTb
+0.58 0.00 0.83 C 3293 1958 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3315 1970 M
+stroke
+LTb
+0.58 0.00 0.83 C 4047 1945 M
+43 23 V
+stroke
+LTb
+0.58 0.00 0.83 C 4340 1922 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4090 1968 M
+stroke
+LTb
+0.58 0.00 0.83 C 4340 1922 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3229 1922 M
+-12 2 V
+stroke
+LTb
+0.58 0.00 0.83 C 3229 1922 M
+-12 2 V
+stroke
+LTb
+0.58 0.00 0.83 C 3859 1964 M
+stroke
+LTb
+0.58 0.00 0.83 C 2384 1946 M
+28 16 V
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1941 M
+-117 21 V
+stroke
+LTb
+0.58 0.00 0.83 C 2412 1962 M
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1941 M
+-117 21 V
+stroke
+LTb
+0.58 0.00 0.83 C 3250 1934 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 3293 1958 M
+stroke
+LTb
+0.58 0.00 0.83 C 4025 1933 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4297 1898 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4047 1945 M
+stroke
+LTb
+0.58 0.00 0.83 C 4297 1898 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3730 1892 M
+-97 18 V
+stroke
+LTb
+0.58 0.00 0.83 C 3730 1892 M
+-97 18 V
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1909 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1909 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 4340 1922 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4361 1934 M
+stroke
+LTb
+0.58 0.00 0.83 C 3229 1922 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3250 1934 M
+stroke
+LTb
+0.58 0.00 0.83 C 4275 1886 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4025 1933 M
+stroke
+LTb
+0.58 0.00 0.83 C 4275 1886 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3709 1880 M
+-76 14 V
+stroke
+LTb
+0.58 0.00 0.83 C 3709 1880 M
+-76 14 V
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1893 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1893 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 4297 1898 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4340 1922 M
+stroke
+LTb
+0.58 0.00 0.83 C 3229 1922 M
+stroke
+LTb
+0.58 0.00 0.83 C 4506 1891 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1885 M
+-95 18 V
+stroke
+LTb
+0.58 0.00 0.83 C 4528 1903 M
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1885 M
+-95 18 V
+stroke
+LTb
+0.58 0.00 0.83 C 3666 1856 M
+-33 6 V
+stroke
+LTb
+0.58 0.00 0.83 C 3666 1856 M
+-33 6 V
+stroke
+LTb
+0.58 0.00 0.83 C 4275 1886 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4297 1898 M
+stroke
+LTb
+0.58 0.00 0.83 C 2829 1885 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1879 M
+-95 18 V
+stroke
+LTb
+0.58 0.00 0.83 C 2851 1897 M
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1879 M
+-95 18 V
+stroke
+LTb
+0.58 0.00 0.83 C 3709 1880 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3730 1892 M
+stroke
+LTb
+0.58 0.00 0.83 C 4464 1867 M
+42 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1869 M
+-117 22 V
+stroke
+LTb
+0.58 0.00 0.83 C 4506 1891 M
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1869 M
+-117 22 V
+stroke
+LTb
+0.58 0.00 0.83 C 3645 1844 M
+-12 3 V
+stroke
+LTb
+0.58 0.00 0.83 C 3645 1844 M
+-12 3 V
+stroke
+LTb
+0.58 0.00 0.83 C 4275 1886 M
+stroke
+LTb
+0.58 0.00 0.83 C 2801 1869 M
+28 16 V
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1863 M
+-117 22 V
+stroke
+LTb
+0.58 0.00 0.83 C 2829 1885 M
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1863 M
+-117 22 V
+stroke
+LTb
+0.58 0.00 0.83 C 3666 1856 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 3709 1880 M
+stroke
+LTb
+0.58 0.00 0.83 C 4442 1855 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1838 M
+-159 29 V
+stroke
+LTb
+0.58 0.00 0.83 C 4464 1867 M
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1838 M
+-159 29 V
+stroke
+LTb
+0.58 0.00 0.83 C 4147 1815 M
+-97 18 V
+stroke
+LTb
+0.58 0.00 0.83 C 4147 1815 M
+-97 18 V
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1831 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1831 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 3645 1844 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3666 1856 M
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1822 M
+-181 33 V
+stroke
+LTb
+0.58 0.00 0.83 C 4442 1855 M
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1822 M
+-181 33 V
+stroke
+LTb
+0.58 0.00 0.83 C 2470 1809 M
+-86 16 V
+stroke
+LTb
+0.58 0.00 0.83 C 2470 1809 M
+-86 16 V
+stroke
+LTb
+0.58 0.00 0.83 C 4126 1803 M
+-76 14 V
+stroke
+LTb
+0.58 0.00 0.83 C 4126 1803 M
+-76 14 V
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1816 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1816 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 3645 1844 M
+stroke
+LTb
+0.58 0.00 0.83 C 2449 1797 M
+-65 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2449 1797 M
+-65 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5195 1779 M
+-236 44 V
+stroke
+LTb
+0.58 0.00 0.83 C 5195 1779 M
+-236 44 V
+stroke
+LTb
+0.58 0.00 0.83 C 4083 1779 M
+-33 6 V
+stroke
+LTb
+0.58 0.00 0.83 C 4083 1779 M
+-33 6 V
+stroke
+LTb
+0.58 0.00 0.83 C 3246 1807 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1802 M
+-96 17 V
+stroke
+LTb
+0.58 0.00 0.83 C 3267 1819 M
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1802 M
+-96 17 V
+stroke
+LTb
+0.58 0.00 0.83 C 2406 1773 M
+-22 4 V
+stroke
+LTb
+0.58 0.00 0.83 C 2406 1773 M
+-22 4 V
+stroke
+LTb
+0.58 0.00 0.83 C 4126 1803 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4147 1815 M
+stroke
+LTb
+0.58 0.00 0.83 C 5173 1767 M
+-214 40 V
+stroke
+LTb
+0.58 0.00 0.83 C 5173 1767 M
+-214 40 V
+stroke
+LTb
+0.58 0.00 0.83 C 4062 1767 M
+-12 2 V
+stroke
+LTb
+0.58 0.00 0.83 C 4062 1767 M
+-12 2 V
+stroke
+LTb
+0.58 0.00 0.83 C 2449 1797 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2470 1809 M
+stroke
+LTb
+0.58 0.00 0.83 C 3217 1791 M
+29 16 V
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1786 M
+-117 21 V
+stroke
+LTb
+0.58 0.00 0.83 C 3246 1807 M
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1786 M
+-117 21 V
+stroke
+LTb
+0.58 0.00 0.83 C 2384 1761 M
+stroke
+LTb
+0.58 0.00 0.83 C 2384 1761 M
+stroke
+LTb
+0.58 0.00 0.83 C 4083 1779 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4126 1803 M
+stroke
+LTb
+0.58 0.00 0.83 C 2406 1773 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 2449 1797 M
+stroke
+LTb
+0.58 0.00 0.83 C 5130 1743 M
+-171 32 V
+stroke
+LTb
+0.58 0.00 0.83 C 5130 1743 M
+-171 32 V
+stroke
+LTb
+0.58 0.00 0.83 C 4292 1772 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4564 1737 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4314 1784 M
+stroke
+LTb
+0.58 0.00 0.83 C 4564 1737 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1754 M
+-146 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1754 M
+-146 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 5173 1767 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5195 1779 M
+stroke
+LTb
+0.58 0.00 0.83 C 4062 1767 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4083 1779 M
+stroke
+LTb
+0.58 0.00 0.83 C 5109 1731 M
+-150 28 V
+stroke
+LTb
+0.58 0.00 0.83 C 5109 1731 M
+-150 28 V
+stroke
+LTb
+0.58 0.00 0.83 C 2887 1731 M
+-86 16 V
+stroke
+LTb
+0.58 0.00 0.83 C 2887 1731 M
+-86 16 V
+stroke
+LTb
+0.58 0.00 0.83 C 2384 1761 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2406 1773 M
+stroke
+LTb
+0.58 0.00 0.83 C 4250 1748 M
+42 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4543 1725 M
+-251 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4292 1772 M
+stroke
+LTb
+0.58 0.00 0.83 C 4543 1725 M
+-251 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1738 M
+-146 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1738 M
+-146 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 5130 1743 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 5173 1767 M
+stroke
+LTb
+0.58 0.00 0.83 C 4062 1767 M
+stroke
+LTb
+0.58 0.00 0.83 C 2865 1719 M
+-64 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2865 1719 M
+-64 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2384 1761 M
+stroke
+LTb
+0.58 0.00 0.83 C 5340 1736 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5611 1702 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 5361 1748 M
+stroke
+LTb
+0.58 0.00 0.83 C 5611 1702 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4228 1736 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4500 1701 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4250 1748 M
+stroke
+LTb
+0.58 0.00 0.83 C 4500 1701 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 5109 1731 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5130 1743 M
+stroke
+LTb
+0.58 0.00 0.83 C 3662 1730 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1724 M
+-95 18 V
+stroke
+LTb
+0.58 0.00 0.83 C 3683 1742 M
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1724 M
+-95 18 V
+stroke
+LTb
+0.58 0.00 0.83 C 2823 1695 M
+-22 4 V
+stroke
+LTb
+0.58 0.00 0.83 C 2823 1695 M
+-22 4 V
+stroke
+LTb
+0.58 0.00 0.83 C 4543 1725 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4564 1737 M
+stroke
+LTb
+0.58 0.00 0.83 C 5297 1712 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 5590 1690 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 5340 1736 M
+stroke
+LTb
+0.58 0.00 0.83 C 5590 1690 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4478 1690 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4228 1736 M
+stroke
+LTb
+0.58 0.00 0.83 C 4478 1690 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 1985 1724 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2112 1716 M
+-106 20 V
+stroke
+LTb
+0.58 0.00 0.83 C 2006 1736 M
+stroke
+LTb
+0.58 0.00 0.83 C 2112 1716 M
+-106 20 V
+stroke
+LTb
+0.58 0.00 0.83 C 5109 1731 M
+stroke
+LTb
+0.58 0.00 0.83 C 2865 1719 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2887 1731 M
+stroke
+LTb
+0.58 0.00 0.83 C 3633 1714 M
+29 16 V
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1708 M
+-116 22 V
+stroke
+LTb
+0.58 0.00 0.83 C 3662 1730 M
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1708 M
+-116 22 V
+stroke
+LTb
+0.58 0.00 0.83 C 2801 1683 M
+0 1 V
+stroke
+LTb
+0.58 0.00 0.83 C 2801 1683 M
+0 1 V
+stroke
+LTb
+0.58 0.00 0.83 C 4500 1701 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4543 1725 M
+stroke
+LTb
+0.58 0.00 0.83 C 1967 1714 M
+18 10 V
+stroke
+LTb
+0.58 0.00 0.83 C 2112 1700 M
+-127 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 1985 1724 M
+stroke
+LTb
+0.58 0.00 0.83 C 2112 1700 M
+-127 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 2823 1695 M
+42 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 2865 1719 M
+stroke
+LTb
+0.58 0.00 0.83 C 5276 1700 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5547 1666 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 5297 1712 M
+stroke
+LTb
+0.58 0.00 0.83 C 5547 1666 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4981 1660 M
+-22 4 V
+stroke
+LTb
+0.58 0.00 0.83 C 4981 1660 M
+-22 4 V
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1677 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1677 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 5590 1690 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5611 1702 M
+stroke
+LTb
+0.58 0.00 0.83 C 4478 1690 M
+22 11 V
+stroke
+LTb
+0.58 0.00 0.83 C 4500 1701 M
+stroke
+LTb
+0.58 0.00 0.83 C 5526 1654 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 5276 1700 M
+stroke
+LTb
+0.58 0.00 0.83 C 5526 1654 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3304 1654 M
+-87 16 V
+stroke
+LTb
+0.58 0.00 0.83 C 3304 1654 M
+-87 16 V
+stroke
+LTb
+0.58 0.00 0.83 C 2112 1668 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 2112 1668 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 2801 1683 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2823 1695 M
+stroke
+LTb
+0.58 0.00 0.83 C 4959 1648 M
+stroke
+LTb
+0.58 0.00 0.83 C 4959 1648 M
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1661 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1661 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 5547 1666 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 5590 1690 M
+stroke
+LTb
+0.58 0.00 0.83 C 4478 1690 M
+stroke
+LTb
+0.58 0.00 0.83 C 3282 1642 M
+-65 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3282 1642 M
+-65 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2112 1652 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 2112 1652 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 2801 1683 M
+stroke
+LTb
+0.58 0.00 0.83 C 5757 1659 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 6028 1624 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 5778 1671 M
+stroke
+LTb
+0.58 0.00 0.83 C 6028 1624 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 5526 1654 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5547 1666 M
+stroke
+LTb
+0.58 0.00 0.83 C 4079 1653 M
+21 11 V
+stroke
+LTb
+0.58 0.00 0.83 C 4350 1618 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4100 1664 M
+stroke
+LTb
+0.58 0.00 0.83 C 4350 1618 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3239 1618 M
+-22 4 V
+stroke
+LTb
+0.58 0.00 0.83 C 3239 1618 M
+-22 4 V
+stroke
+LTb
+0.58 0.00 0.83 C 4959 1648 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4981 1660 M
+stroke
+LTb
+0.58 0.00 0.83 C 5714 1635 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 6007 1612 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 5757 1659 M
+stroke
+LTb
+0.58 0.00 0.83 C 6007 1612 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 2401 1646 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1639 M
+-106 19 V
+stroke
+LTb
+0.58 0.00 0.83 C 2423 1658 M
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1639 M
+-106 19 V
+stroke
+LTb
+0.58 0.00 0.83 C 5526 1654 M
+stroke
+LTb
+0.58 0.00 0.83 C 3282 1642 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3304 1654 M
+stroke
+LTb
+0.58 0.00 0.83 C 4050 1637 M
+29 16 V
+stroke
+LTb
+0.58 0.00 0.83 C 4329 1606 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4079 1653 M
+stroke
+LTb
+0.58 0.00 0.83 C 4329 1606 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3218 1606 M
+-1 0 V
+stroke
+LTb
+0.58 0.00 0.83 C 3218 1606 M
+-1 0 V
+stroke
+LTb
+0.58 0.00 0.83 C 4959 1648 M
+stroke
+LTb
+0.58 0.00 0.83 C 4959 1648 M
+stroke
+LTb
+0.58 0.00 0.83 C 2384 1637 M
+17 9 V
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1623 M
+-128 23 V
+stroke
+LTb
+0.58 0.00 0.83 C 2401 1646 M
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1623 M
+-128 23 V
+stroke
+LTb
+0.58 0.00 0.83 C 3239 1618 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 3282 1642 M
+stroke
+LTb
+0.58 0.00 0.83 C 5692 1623 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5964 1588 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 5714 1635 M
+stroke
+LTb
+0.58 0.00 0.83 C 5964 1588 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 5126 1617 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5397 1582 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 5147 1629 M
+stroke
+LTb
+0.58 0.00 0.83 C 5397 1582 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4286 1582 M
+-236 44 V
+stroke
+LTb
+0.58 0.00 0.83 C 4286 1582 M
+-236 44 V
+stroke
+LTb
+0.58 0.00 0.83 C 6007 1612 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 6028 1624 M
+stroke
+LTb
+0.58 0.00 0.83 C 5943 1576 M
+-251 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 5692 1623 M
+stroke
+LTb
+0.58 0.00 0.83 C 5943 1576 M
+-251 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3719 1576 M
+-86 16 V
+stroke
+LTb
+0.58 0.00 0.83 C 3719 1576 M
+-86 16 V
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1591 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1591 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 4329 1606 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4350 1618 M
+stroke
+LTb
+0.58 0.00 0.83 C 3218 1606 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3239 1618 M
+stroke
+LTb
+0.58 0.00 0.83 C 5083 1593 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 5376 1570 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 5126 1617 M
+stroke
+LTb
+0.58 0.00 0.83 C 5376 1570 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4264 1570 M
+-214 40 V
+stroke
+LTb
+0.58 0.00 0.83 C 4264 1570 M
+-214 40 V
+stroke
+LTb
+0.58 0.00 0.83 C 2042 1570 M
+-75 14 V
+stroke
+LTb
+0.58 0.00 0.83 C 2042 1570 M
+-75 14 V
+stroke
+LTb
+0.58 0.00 0.83 C 5964 1588 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 6007 1612 M
+stroke
+LTb
+0.58 0.00 0.83 C 3698 1564 M
+-65 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3698 1564 M
+-65 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1575 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1575 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 4286 1582 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4329 1606 M
+stroke
+LTb
+0.58 0.00 0.83 C 3218 1606 M
+stroke
+LTb
+0.58 0.00 0.83 C 2021 1558 M
+-54 10 V
+stroke
+LTb
+0.58 0.00 0.83 C 2021 1558 M
+-54 10 V
+stroke
+LTb
+0.58 0.00 0.83 C 5062 1581 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5333 1547 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 5083 1593 M
+stroke
+LTb
+0.58 0.00 0.83 C 5333 1547 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 5943 1576 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5964 1588 M
+stroke
+LTb
+0.58 0.00 0.83 C 4495 1575 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1567 M
+-106 20 V
+stroke
+LTb
+0.58 0.00 0.83 C 4517 1587 M
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1567 M
+-106 20 V
+stroke
+LTb
+0.58 0.00 0.83 C 3655 1540 M
+-22 5 V
+stroke
+LTb
+0.58 0.00 0.83 C 3655 1540 M
+-22 5 V
+stroke
+LTb
+0.58 0.00 0.83 C 5376 1570 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5397 1582 M
+stroke
+LTb
+0.58 0.00 0.83 C 4264 1570 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4286 1582 M
+stroke
+LTb
+0.58 0.00 0.83 C 5312 1535 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 5062 1581 M
+stroke
+LTb
+0.58 0.00 0.83 C 5312 1535 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 2818 1569 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1561 M
+-106 20 V
+stroke
+LTb
+0.58 0.00 0.83 C 2840 1581 M
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1561 M
+-106 20 V
+stroke
+LTb
+0.58 0.00 0.83 C 1978 1534 M
+-11 2 V
+stroke
+LTb
+0.58 0.00 0.83 C 1978 1534 M
+-11 2 V
+stroke
+LTb
+0.58 0.00 0.83 C 5943 1576 M
+stroke
+LTb
+0.58 0.00 0.83 C 3698 1564 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3719 1576 M
+stroke
+LTb
+0.58 0.00 0.83 C 4453 1551 M
+42 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1551 M
+-128 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4495 1575 M
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1551 M
+-128 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 3634 1529 M
+-1 0 V
+stroke
+LTb
+0.58 0.00 0.83 C 3634 1529 M
+-1 0 V
+stroke
+LTb
+0.58 0.00 0.83 C 5333 1547 M
+43 23 V
+stroke
+LTb
+0.58 0.00 0.83 C 5376 1570 M
+stroke
+LTb
+0.58 0.00 0.83 C 4264 1570 M
+stroke
+LTb
+0.58 0.00 0.83 C 2021 1558 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2042 1570 M
+stroke
+LTb
+0.58 0.00 0.83 C 2801 1559 M
+17 10 V
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1545 M
+-128 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 2818 1569 M
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1545 M
+-128 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 3655 1540 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 3698 1564 M
+stroke
+LTb
+0.58 0.00 0.83 C 1978 1534 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 2021 1558 M
+stroke
+LTb
+0.58 0.00 0.83 C 5543 1539 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5814 1505 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 5564 1551 M
+stroke
+LTb
+0.58 0.00 0.83 C 5814 1505 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4431 1539 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1520 M
+-170 31 V
+stroke
+LTb
+0.58 0.00 0.83 C 4453 1551 M
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1520 M
+-170 31 V
+stroke
+LTb
+0.58 0.00 0.83 C 5312 1535 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5333 1547 M
+stroke
+LTb
+0.58 0.00 0.83 C 4136 1499 M
+-86 16 V
+stroke
+LTb
+0.58 0.00 0.83 C 4136 1499 M
+-86 16 V
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1513 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1513 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 3634 1529 M
+21 11 V
+stroke
+LTb
+0.58 0.00 0.83 C 3655 1540 M
+stroke
+LTb
+0.58 0.00 0.83 C 5500 1516 M
+43 23 V
+stroke
+LTb
+0.58 0.00 0.83 C 5793 1493 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 5543 1539 M
+stroke
+LTb
+0.58 0.00 0.83 C 5793 1493 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1504 M
+-192 35 V
+stroke
+LTb
+0.58 0.00 0.83 C 4431 1539 M
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1504 M
+-192 35 V
+stroke
+LTb
+0.58 0.00 0.83 C 2459 1493 M
+-75 14 V
+stroke
+LTb
+0.58 0.00 0.83 C 2459 1493 M
+-75 14 V
+stroke
+LTb
+0.58 0.00 0.83 C 5312 1535 M
+stroke
+LTb
+0.58 0.00 0.83 C 1967 1528 M
+11 6 V
+stroke
+LTb
+0.58 0.00 0.83 C 1978 1534 M
+stroke
+LTb
+0.58 0.00 0.83 C 4115 1487 M
+-65 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4115 1487 M
+-65 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1498 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1498 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 3634 1529 M
+stroke
+LTb
+0.58 0.00 0.83 C 2438 1481 M
+-54 10 V
+stroke
+LTb
+0.58 0.00 0.83 C 2438 1481 M
+-54 10 V
+stroke
+LTb
+0.58 0.00 0.83 C 5479 1504 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5750 1469 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 5500 1516 M
+stroke
+LTb
+0.58 0.00 0.83 C 5750 1469 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 5184 1463 M
+-225 42 V
+stroke
+LTb
+0.58 0.00 0.83 C 5184 1463 M
+-225 42 V
+stroke
+LTb
+0.58 0.00 0.83 C 4072 1463 M
+-22 4 V
+stroke
+LTb
+0.58 0.00 0.83 C 4072 1463 M
+-22 4 V
+stroke
+LTb
+0.58 0.00 0.83 C 5793 1493 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5814 1505 M
+stroke
+LTb
+0.58 0.00 0.83 C 5729 1457 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 5479 1504 M
+stroke
+LTb
+0.58 0.00 0.83 C 5729 1457 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3235 1492 M
+21 11 V
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1484 M
+-107 19 V
+stroke
+LTb
+0.58 0.00 0.83 C 3256 1503 M
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1484 M
+-107 19 V
+stroke
+LTb
+0.58 0.00 0.83 C 2395 1457 M
+-11 2 V
+stroke
+LTb
+0.58 0.00 0.83 C 2395 1457 M
+-11 2 V
+stroke
+LTb
+0.58 0.00 0.83 C 4115 1487 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4136 1499 M
+stroke
+LTb
+0.58 0.00 0.83 C 5162 1451 M
+-203 38 V
+stroke
+LTb
+0.58 0.00 0.83 C 5162 1451 M
+-203 38 V
+stroke
+LTb
+0.58 0.00 0.83 C 4051 1451 M
+-1 0 V
+stroke
+LTb
+0.58 0.00 0.83 C 4051 1451 M
+-1 0 V
+stroke
+LTb
+0.58 0.00 0.83 C 1557 1485 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 1696 1476 M
+-118 21 V
+stroke
+LTb
+0.58 0.00 0.83 C 1578 1497 M
+stroke
+LTb
+0.58 0.00 0.83 C 1696 1476 M
+-118 21 V
+stroke
+LTb
+0.58 0.00 0.83 C 5750 1469 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 5793 1493 M
+stroke
+LTb
+0.58 0.00 0.83 C 2438 1481 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2459 1493 M
+stroke
+LTb
+0.58 0.00 0.83 C 3217 1482 M
+18 10 V
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1468 M
+-128 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 3235 1492 M
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1468 M
+-128 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4072 1463 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4115 1487 M
+stroke
+LTb
+0.58 0.00 0.83 C 1514 1462 M
+43 23 V
+stroke
+LTb
+0.58 0.00 0.83 C 1696 1460 M
+-139 25 V
+stroke
+LTb
+0.58 0.00 0.83 C 1557 1485 M
+stroke
+LTb
+0.58 0.00 0.83 C 1696 1460 M
+-139 25 V
+stroke
+LTb
+0.58 0.00 0.83 C 2395 1457 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 2438 1481 M
+stroke
+LTb
+0.58 0.00 0.83 C 5119 1427 M
+-160 30 V
+stroke
+LTb
+0.58 0.00 0.83 C 5119 1427 M
+-160 30 V
+stroke
+LTb
+0.58 0.00 0.83 C 5729 1457 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5750 1469 M
+stroke
+LTb
+0.58 0.00 0.83 C 4281 1456 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4553 1421 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4303 1468 M
+stroke
+LTb
+0.58 0.00 0.83 C 4553 1421 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1436 M
+-146 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1436 M
+-146 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 5162 1451 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5184 1463 M
+stroke
+LTb
+0.58 0.00 0.83 C 4051 1451 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4072 1463 M
+stroke
+LTb
+0.58 0.00 0.83 C 5098 1415 M
+-139 26 V
+stroke
+LTb
+0.58 0.00 0.83 C 5098 1415 M
+-139 26 V
+stroke
+LTb
+0.58 0.00 0.83 C 2876 1415 M
+-75 14 V
+stroke
+LTb
+0.58 0.00 0.83 C 2876 1415 M
+-75 14 V
+stroke
+LTb
+0.58 0.00 0.83 C 1493 1450 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 1696 1428 M
+-182 34 V
+stroke
+LTb
+0.58 0.00 0.83 C 1514 1462 M
+stroke
+LTb
+0.58 0.00 0.83 C 1696 1428 M
+-182 34 V
+stroke
+LTb
+0.58 0.00 0.83 C 5729 1457 M
+stroke
+LTb
+0.58 0.00 0.83 C 2384 1451 M
+11 6 V
+stroke
+LTb
+0.58 0.00 0.83 C 2395 1457 M
+stroke
+LTb
+0.58 0.00 0.83 C 4239 1432 M
+42 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4532 1409 M
+-251 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4281 1456 M
+stroke
+LTb
+0.58 0.00 0.83 C 4532 1409 M
+-251 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1420 M
+-146 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1420 M
+-146 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 5119 1427 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 5162 1451 M
+stroke
+LTb
+0.58 0.00 0.83 C 4051 1451 M
+stroke
+LTb
+0.58 0.00 0.83 C 2854 1403 M
+-53 10 V
+stroke
+LTb
+0.58 0.00 0.83 C 2854 1403 M
+-53 10 V
+stroke
+LTb
+0.58 0.00 0.83 C 1696 1412 M
+-203 38 V
+stroke
+LTb
+0.58 0.00 0.83 C 1493 1450 M
+stroke
+LTb
+0.58 0.00 0.83 C 1696 1412 M
+-203 38 V
+stroke
+LTb
+0.58 0.00 0.83 C 5329 1420 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5600 1386 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 5350 1432 M
+stroke
+LTb
+0.58 0.00 0.83 C 5600 1386 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4217 1420 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4489 1386 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4239 1432 M
+stroke
+LTb
+0.58 0.00 0.83 C 4489 1386 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 5098 1415 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5119 1427 M
+stroke
+LTb
+0.58 0.00 0.83 C 3651 1414 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1406 M
+-106 20 V
+stroke
+LTb
+0.58 0.00 0.83 C 3672 1426 M
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1406 M
+-106 20 V
+stroke
+LTb
+0.58 0.00 0.83 C 2812 1379 M
+-11 3 V
+stroke
+LTb
+0.58 0.00 0.83 C 2812 1379 M
+-11 3 V
+stroke
+LTb
+0.58 0.00 0.83 C 4532 1409 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4553 1421 M
+stroke
+LTb
+0.58 0.00 0.83 C 5286 1396 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 5579 1374 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 5329 1420 M
+stroke
+LTb
+0.58 0.00 0.83 C 5579 1374 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4467 1374 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4217 1420 M
+stroke
+LTb
+0.58 0.00 0.83 C 4467 1374 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 1974 1408 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2112 1398 M
+-117 22 V
+stroke
+LTb
+0.58 0.00 0.83 C 1995 1420 M
+stroke
+LTb
+0.58 0.00 0.83 C 2112 1398 M
+-117 22 V
+stroke
+LTb
+0.58 0.00 0.83 C 5098 1415 M
+stroke
+LTb
+0.58 0.00 0.83 C 2854 1403 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2876 1415 M
+stroke
+LTb
+0.58 0.00 0.83 C 3633 1404 M
+18 10 V
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1390 M
+-127 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 3651 1414 M
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1390 M
+-127 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4489 1386 M
+43 23 V
+stroke
+LTb
+0.58 0.00 0.83 C 4532 1409 M
+stroke
+LTb
+0.58 0.00 0.83 C 1967 1404 M
+7 4 V
+stroke
+LTb
+0.58 0.00 0.83 C 2112 1382 M
+-138 26 V
+stroke
+LTb
+0.58 0.00 0.83 C 1974 1408 M
+stroke
+LTb
+0.58 0.00 0.83 C 2112 1382 M
+-138 26 V
+stroke
+LTb
+0.58 0.00 0.83 C 2812 1379 M
+42 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 2854 1403 M
+stroke
+LTb
+0.58 0.00 0.83 C 5265 1384 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5536 1350 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 5286 1396 M
+stroke
+LTb
+0.58 0.00 0.83 C 5536 1350 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4970 1344 M
+-11 2 V
+stroke
+LTb
+0.58 0.00 0.83 C 4970 1344 M
+-11 2 V
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1359 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1359 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 5579 1374 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5600 1386 M
+stroke
+LTb
+0.58 0.00 0.83 C 4467 1374 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4489 1386 M
+stroke
+LTb
+0.58 0.00 0.83 C 5515 1338 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 5265 1384 M
+stroke
+LTb
+0.58 0.00 0.83 C 5515 1338 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3293 1338 M
+-76 14 V
+stroke
+LTb
+0.58 0.00 0.83 C 3293 1338 M
+-76 14 V
+stroke
+LTb
+0.58 0.00 0.83 C 2112 1350 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 2112 1350 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 2801 1373 M
+11 6 V
+stroke
+LTb
+0.58 0.00 0.83 C 2812 1379 M
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1343 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1343 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 1343 1366 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 1614 1332 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 1364 1378 M
+stroke
+LTb
+0.58 0.00 0.83 C 1614 1332 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 5536 1350 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 5579 1374 M
+stroke
+LTb
+0.58 0.00 0.83 C 4467 1374 M
+stroke
+LTb
+0.58 0.00 0.83 C 3271 1326 M
+-54 10 V
+stroke
+LTb
+0.58 0.00 0.83 C 3271 1326 M
+-54 10 V
+stroke
+LTb
+0.58 0.00 0.83 C 2112 1335 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 2112 1335 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 1336 1363 M
+7 3 V
+stroke
+LTb
+0.58 0.00 0.83 C 1593 1320 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 1343 1366 M
+stroke
+LTb
+0.58 0.00 0.83 C 1593 1320 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 5515 1338 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5536 1350 M
+stroke
+LTb
+0.58 0.00 0.83 C 4068 1337 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4339 1302 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4089 1349 M
+stroke
+LTb
+0.58 0.00 0.83 C 4339 1302 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3228 1302 M
+-11 2 V
+stroke
+LTb
+0.58 0.00 0.83 C 3228 1302 M
+-11 2 V
+stroke
+LTb
+0.58 0.00 0.83 C 4959 1338 M
+11 6 V
+stroke
+LTb
+0.58 0.00 0.83 C 4970 1344 M
+stroke
+LTb
+0.58 0.00 0.83 C 2390 1331 M
+22 11 V
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1321 M
+-117 21 V
+stroke
+LTb
+0.58 0.00 0.83 C 2412 1342 M
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1321 M
+-117 21 V
+stroke
+LTb
+0.58 0.00 0.83 C 1550 1296 M
+-214 40 V
+stroke
+LTb
+0.58 0.00 0.83 C 1550 1296 M
+-214 40 V
+stroke
+LTb
+0.58 0.00 0.83 C 5515 1338 M
+stroke
+LTb
+0.58 0.00 0.83 C 3271 1326 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3293 1338 M
+stroke
+LTb
+0.58 0.00 0.83 C 4050 1327 M
+18 10 V
+stroke
+LTb
+0.58 0.00 0.83 C 4318 1290 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4068 1337 M
+stroke
+LTb
+0.58 0.00 0.83 C 4318 1290 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 1593 1320 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 1614 1332 M
+stroke
+LTb
+0.58 0.00 0.83 C 2384 1327 M
+6 4 V
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1305 M
+-139 26 V
+stroke
+LTb
+0.58 0.00 0.83 C 2390 1331 M
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1305 M
+-139 26 V
+stroke
+LTb
+0.58 0.00 0.83 C 1529 1284 M
+-193 36 V
+stroke
+LTb
+0.58 0.00 0.83 C 1529 1284 M
+-193 36 V
+stroke
+LTb
+0.58 0.00 0.83 C 3228 1302 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 3271 1326 M
+stroke
+LTb
+0.58 0.00 0.83 C 1550 1296 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 1593 1320 M
+stroke
+LTb
+0.58 0.00 0.83 C 5115 1301 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5386 1266 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 5136 1313 M
+stroke
+LTb
+0.58 0.00 0.83 C 5386 1266 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4275 1266 M
+-225 42 V
+stroke
+LTb
+0.58 0.00 0.83 C 4275 1266 M
+-225 42 V
+stroke
+LTb
+0.58 0.00 0.83 C 3708 1260 M
+-75 14 V
+stroke
+LTb
+0.58 0.00 0.83 C 3708 1260 M
+-75 14 V
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1273 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1273 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 4318 1290 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4339 1302 M
+stroke
+LTb
+0.58 0.00 0.83 C 3217 1296 M
+11 6 V
+stroke
+LTb
+0.58 0.00 0.83 C 3228 1302 M
+stroke
+LTb
+0.58 0.00 0.83 C 5072 1277 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 5365 1255 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 5115 1301 M
+stroke
+LTb
+0.58 0.00 0.83 C 5365 1255 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4253 1254 M
+-203 38 V
+stroke
+LTb
+0.58 0.00 0.83 C 4253 1254 M
+-203 38 V
+stroke
+LTb
+0.58 0.00 0.83 C 2031 1254 M
+-64 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2031 1254 M
+-64 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 1529 1284 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 1550 1296 M
+stroke
+LTb
+0.58 0.00 0.83 C 3687 1248 M
+-54 10 V
+stroke
+LTb
+0.58 0.00 0.83 C 3687 1248 M
+-54 10 V
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1257 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 2529 1257 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 4275 1266 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4318 1290 M
+stroke
+LTb
+0.58 0.00 0.83 C 2010 1242 M
+-43 8 V
+stroke
+LTb
+0.58 0.00 0.83 C 2010 1242 M
+-43 8 V
+stroke
+LTb
+0.58 0.00 0.83 C 1529 1284 M
+stroke
+LTb
+0.58 0.00 0.83 C 5051 1265 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5322 1231 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 5072 1277 M
+stroke
+LTb
+0.58 0.00 0.83 C 5322 1231 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4484 1259 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1249 M
+-117 22 V
+stroke
+LTb
+0.58 0.00 0.83 C 4506 1271 M
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1249 M
+-117 22 V
+stroke
+LTb
+0.58 0.00 0.83 C 3644 1225 M
+-11 2 V
+stroke
+LTb
+0.58 0.00 0.83 C 3644 1225 M
+-11 2 V
+stroke
+LTb
+0.58 0.00 0.83 C 5365 1255 M
+21 11 V
+stroke
+LTb
+0.58 0.00 0.83 C 5386 1266 M
+stroke
+LTb
+0.58 0.00 0.83 C 4253 1254 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4275 1266 M
+stroke
+LTb
+0.58 0.00 0.83 C 5301 1219 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 5051 1265 M
+stroke
+LTb
+0.58 0.00 0.83 C 5301 1219 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 2807 1253 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1243 M
+-117 22 V
+stroke
+LTb
+0.58 0.00 0.83 C 2829 1265 M
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1243 M
+-117 22 V
+stroke
+LTb
+0.00 0.62 0.45 C 1967 1218 M
+-21 4 V
+stroke
+LTb
+0.58 0.00 0.83 C 3687 1248 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3708 1260 M
+stroke
+LTb
+0.58 0.00 0.83 C 4442 1235 M
+42 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1233 M
+-139 26 V
+stroke
+LTb
+0.58 0.00 0.83 C 4484 1259 M
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1233 M
+-139 26 V
+stroke
+LTb
+0.58 0.00 0.83 C 1401 1212 M
+-65 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 1401 1212 M
+-65 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5322 1231 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 5365 1255 M
+stroke
+LTb
+0.58 0.00 0.83 C 4253 1254 M
+stroke
+LTb
+0.58 0.00 0.83 C 2010 1242 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2031 1254 M
+stroke
+LTb
+0.58 0.00 0.83 C 2801 1249 M
+6 4 V
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1227 M
+-139 26 V
+stroke
+LTb
+0.58 0.00 0.83 C 2807 1253 M
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1227 M
+-139 26 V
+stroke
+LTb
+0.58 0.00 0.83 C 1946 1207 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 1696 2195 M
+0 -942 V
+stroke
+LTb
+0.58 0.00 0.83 C 3644 1225 M
+43 23 V
+stroke
+LTb
+0.58 0.00 0.83 C 3687 1248 M
+stroke
+LTb
+0.58 0.00 0.83 C 1379 1201 M
+-43 7 V
+stroke
+LTb
+0.58 0.00 0.83 C 1379 1201 M
+-43 7 V
+stroke
+LTb
+0.58 0.00 0.83 C 1967 1218 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 2010 1242 M
+stroke
+LTb
+0.58 0.00 0.83 C 4420 1223 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1202 M
+-181 33 V
+stroke
+LTb
+0.58 0.00 0.83 C 4442 1235 M
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1202 M
+-181 33 V
+stroke
+LTb
+0.58 0.00 0.83 C 5301 1219 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5322 1231 M
+stroke
+LTb
+0.58 0.00 0.83 C 4125 1183 M
+-75 14 V
+stroke
+LTb
+0.58 0.00 0.83 C 4125 1183 M
+-75 14 V
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1196 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1196 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 3633 1218 M
+11 7 V
+stroke
+LTb
+0.58 0.00 0.83 C 3644 1225 M
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1186 M
+-203 37 V
+stroke
+LTb
+0.58 0.00 0.83 C 4420 1223 M
+stroke
+LTb
+0.58 0.00 0.83 C 4623 1186 M
+-203 37 V
+stroke
+LTb
+0.58 0.00 0.83 C 2448 1177 M
+-64 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2448 1177 M
+-64 12 V
+stroke
+LTb
+0.00 0.62 0.45 C 1336 1177 M
+-21 4 V
+stroke
+LTb
+0.58 0.00 0.83 C 5301 1219 M
+stroke
+LTb
+0.00 0.62 0.45 C 1967 2161 M
+0 -943 V
+stroke
+LTb
+0.58 0.00 0.83 C 4104 1171 M
+-54 10 V
+stroke
+LTb
+0.58 0.00 0.83 C 4104 1171 M
+-54 10 V
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1180 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 2946 1180 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 1379 1201 M
+22 11 V
+stroke
+LTb
+0.58 0.00 0.83 C 1401 1212 M
+stroke
+LTb
+0.58 0.00 0.83 C 2427 1165 M
+-43 8 V
+stroke
+LTb
+0.58 0.00 0.83 C 2427 1165 M
+-43 8 V
+stroke
+LTb
+0.58 0.00 0.83 C 1315 1165 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 1065 3043 M
+0 -1832 V
+stroke
+LTb
+0.58 0.00 0.83 C 1946 2149 M
+0 -942 V
+stroke
+LTb
+0.58 0.00 0.83 C 1336 1177 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 1379 1201 M
+stroke
+LTb
+0.58 0.00 0.83 C 5173 1147 M
+-214 40 V
+stroke
+LTb
+0.58 0.00 0.83 C 5173 1147 M
+-214 40 V
+stroke
+LTb
+0.58 0.00 0.83 C 4061 1147 M
+-11 2 V
+stroke
+LTb
+0.58 0.00 0.83 C 4061 1147 M
+-11 2 V
+stroke
+LTb
+0.58 0.00 0.83 C 3224 1176 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1166 M
+-118 22 V
+stroke
+LTb
+0.58 0.00 0.83 C 3245 1188 M
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1166 M
+-118 22 V
+stroke
+LTb
+0.00 0.62 0.45 C 2384 1141 M
+-22 4 V
+stroke
+LTb
+0.58 0.00 0.83 C 4104 1171 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4125 1183 M
+stroke
+LTb
+0.58 0.00 0.83 C 5151 1135 M
+-192 36 V
+stroke
+LTb
+0.58 0.00 0.83 C 5151 1135 M
+-192 36 V
+stroke
+LTb
+0.58 0.00 0.83 C 1546 1170 M
+21 11 V
+stroke
+LTb
+0.58 0.00 0.83 C 1817 1135 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 1567 1181 M
+stroke
+LTb
+0.58 0.00 0.83 C 1817 1135 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 2427 1165 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2448 1177 M
+stroke
+LTb
+0.00 0.62 0.45 C 1336 3009 M
+0 -1832 V
+stroke
+LTb
+0.58 0.00 0.83 C 3217 1172 M
+7 4 V
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1150 M
+-139 26 V
+stroke
+LTb
+0.58 0.00 0.83 C 3224 1176 M
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1150 M
+-139 26 V
+stroke
+LTb
+0.58 0.00 0.83 C 2362 1129 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 2112 2241 M
+0 -1065 V
+stroke
+LTb
+0.58 0.00 0.83 C 4061 1147 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4104 1171 M
+stroke
+LTb
+0.58 0.00 0.83 C 1503 1146 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 1796 1123 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 1546 1170 M
+stroke
+LTb
+0.58 0.00 0.83 C 1796 1123 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 2384 1141 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 2427 1165 M
+stroke
+LTb
+0.58 0.00 0.83 C 1315 2997 M
+0 -1832 V
+stroke
+LTb
+0.58 0.00 0.83 C 5108 1112 M
+-149 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 5108 1112 M
+-149 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 4270 1140 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4542 1105 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4292 1152 M
+stroke
+LTb
+0.58 0.00 0.83 C 4542 1105 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1118 M
+-146 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1118 M
+-146 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 5151 1135 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5173 1147 M
+stroke
+LTb
+0.58 0.00 0.83 C 4050 1141 M
+11 6 V
+stroke
+LTb
+0.58 0.00 0.83 C 4061 1147 M
+stroke
+LTb
+0.58 0.00 0.83 C 5087 1100 M
+-128 23 V
+stroke
+LTb
+0.58 0.00 0.83 C 5087 1100 M
+-128 23 V
+stroke
+LTb
+0.58 0.00 0.83 C 2865 1099 M
+-64 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2865 1099 M
+-64 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 1482 1134 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 1753 1099 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 1503 1146 M
+stroke
+LTb
+0.58 0.00 0.83 C 1753 1099 M
+-250 47 V
+stroke
+LTb
+0.00 0.62 0.45 C 2384 2207 M
+0 -1066 V
+stroke
+LTb
+0.58 0.00 0.83 C 4228 1116 M
+42 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4520 1094 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4270 1140 M
+stroke
+LTb
+0.58 0.00 0.83 C 4520 1094 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1102 M
+-146 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 3363 1102 M
+-146 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 5108 1112 M
+43 23 V
+stroke
+LTb
+0.58 0.00 0.83 C 5151 1135 M
+stroke
+LTb
+0.58 0.00 0.83 C 1796 1123 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 1817 1135 M
+stroke
+LTb
+0.58 0.00 0.83 C 2843 1087 M
+-42 8 V
+stroke
+LTb
+0.58 0.00 0.83 C 2843 1087 M
+-42 8 V
+stroke
+LTb
+0.58 0.00 0.83 C 1732 1087 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 1482 1134 M
+stroke
+LTb
+0.58 0.00 0.83 C 1732 1087 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 2362 2195 M
+0 -1066 V
+stroke
+LTb
+0.58 0.00 0.83 C 1753 1099 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 1796 1123 M
+stroke
+LTb
+0.58 0.00 0.83 C 4206 1104 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4478 1070 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4228 1116 M
+stroke
+LTb
+0.58 0.00 0.83 C 4478 1070 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 5087 1100 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 5108 1112 M
+stroke
+LTb
+0.58 0.00 0.83 C 3640 1098 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1088 M
+-117 22 V
+stroke
+LTb
+0.58 0.00 0.83 C 3661 1110 M
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1088 M
+-117 22 V
+stroke
+LTb
+0.00 0.62 0.45 C 2801 1064 M
+-22 4 V
+stroke
+LTb
+0.58 0.00 0.83 C 4520 1094 M
+22 11 V
+stroke
+LTb
+0.58 0.00 0.83 C 4542 1105 M
+stroke
+LTb
+0.58 0.00 0.83 C 4456 1058 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4206 1104 M
+stroke
+LTb
+0.58 0.00 0.83 C 4456 1058 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 1963 1092 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2234 1058 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 1984 1104 M
+stroke
+LTb
+0.58 0.00 0.83 C 2234 1058 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 5087 1100 M
+stroke
+LTb
+0.58 0.00 0.83 C 2843 1087 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2865 1099 M
+stroke
+LTb
+0.58 0.00 0.83 C 1732 1087 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 1753 1099 M
+stroke
+LTb
+0.58 0.00 0.83 C 3633 1095 M
+7 3 V
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1072 M
+-138 26 V
+stroke
+LTb
+0.58 0.00 0.83 C 3640 1098 M
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1072 M
+-138 26 V
+stroke
+LTb
+0.58 0.00 0.83 C 2779 1052 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 2529 2167 M
+0 -1069 V
+stroke
+LTb
+0.58 0.00 0.83 C 4478 1070 M
+42 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4520 1094 M
+stroke
+LTb
+0.58 0.00 0.83 C 1920 1068 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 2213 1046 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 1963 1092 M
+stroke
+LTb
+0.58 0.00 0.83 C 2213 1046 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 2801 1064 M
+42 23 V
+stroke
+LTb
+0.58 0.00 0.83 C 2843 1087 M
+stroke
+LTb
+0.58 0.00 0.83 C 1732 1087 M
+stroke
+LTb
+0.00 0.62 0.45 C 4959 1028 M
+-22 4 V
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1041 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1041 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 4456 1058 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4478 1070 M
+stroke
+LTb
+0.58 0.00 0.83 C 3282 1022 M
+-65 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3282 1022 M
+-65 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 1898 1056 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2170 1022 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 1920 1068 M
+stroke
+LTb
+0.58 0.00 0.83 C 2170 1022 M
+-250 46 V
+stroke
+LTb
+0.00 0.62 0.45 C 2801 2132 M
+0 -1068 V
+stroke
+LTb
+0.58 0.00 0.83 C 4937 1016 M
+-43 8 V
+stroke
+LTb
+0.58 0.00 0.83 C 4687 3013 M
+0 -16 V
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1025 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1025 M
+-145 27 V
+stroke
+LTb
+0.58 0.00 0.83 C 4456 1058 M
+stroke
+LTb
+0.58 0.00 0.83 C 2213 1046 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2234 1058 M
+stroke
+LTb
+0.58 0.00 0.83 C 3260 1010 M
+-43 8 V
+stroke
+LTb
+0.58 0.00 0.83 C 3260 1010 M
+-43 8 V
+stroke
+LTb
+0.58 0.00 0.83 C 2149 1010 M
+-251 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 1898 1056 M
+stroke
+LTb
+0.58 0.00 0.83 C 2149 1010 M
+-251 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 2779 2120 M
+0 -1068 V
+stroke
+LTb
+0.58 0.00 0.83 C 2170 1022 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 2213 1046 M
+stroke
+LTb
+0.00 0.62 0.45 C 4894 992 M
+-21 4 V
+stroke
+LTb
+0.58 0.00 0.83 C 4057 1021 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4328 986 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4078 1033 M
+stroke
+LTb
+0.58 0.00 0.83 C 4328 986 M
+-250 47 V
+stroke
+LTb
+0.00 0.62 0.45 C 3217 986 M
+-21 4 V
+stroke
+LTb
+0.00 0.62 0.45 C 4959 2978 M
+0 -1950 V
+stroke
+LTb
+0.58 0.00 0.83 C 4873 980 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4623 2993 M
+0 -1966 V
+stroke
+LTb
+0.58 0.00 0.83 C 2379 1015 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2651 980 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 2401 1027 M
+stroke
+LTb
+0.58 0.00 0.83 C 2651 980 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3260 1010 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3282 1022 M
+stroke
+LTb
+0.58 0.00 0.83 C 2149 1010 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2170 1022 M
+stroke
+LTb
+0.58 0.00 0.83 C 4050 1017 M
+7 4 V
+stroke
+LTb
+0.58 0.00 0.83 C 4307 974 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4057 1021 M
+stroke
+LTb
+0.58 0.00 0.83 C 4307 974 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3196 974 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 2946 2075 M
+0 -1054 V
+stroke
+LTb
+0.58 0.00 0.83 C 4894 992 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4937 2966 M
+0 -1950 V
+stroke
+LTb
+0.58 0.00 0.83 C 2337 991 M
+42 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 2630 968 M
+-251 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 2379 1015 M
+stroke
+LTb
+0.58 0.00 0.83 C 2630 968 M
+-251 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3217 986 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 3260 1010 M
+stroke
+LTb
+0.58 0.00 0.83 C 2149 1010 M
+stroke
+LTb
+0.58 0.00 0.83 C 4264 950 M
+-214 40 V
+stroke
+LTb
+0.58 0.00 0.83 C 4264 950 M
+-214 40 V
+stroke
+LTb
+0.00 0.62 0.45 C 4894 2958 M
+0 -1966 V
+stroke
+LTb
+0.58 0.00 0.83 C 3697 944 M
+-64 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3697 944 M
+-64 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2315 979 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2587 944 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 2337 991 M
+stroke
+LTb
+0.58 0.00 0.83 C 2587 944 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4307 974 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4328 986 M
+stroke
+LTb
+0.00 0.62 0.45 C 3217 2040 M
+0 -1054 V
+stroke
+LTb
+0.58 0.00 0.83 C 4242 939 M
+-192 35 V
+stroke
+LTb
+0.58 0.00 0.83 C 4242 939 M
+-192 35 V
+stroke
+LTb
+0.58 0.00 0.83 C 4873 2947 M
+0 -1967 V
+stroke
+LTb
+0.58 0.00 0.83 C 2630 968 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2651 980 M
+stroke
+LTb
+0.58 0.00 0.83 C 3676 933 M
+-43 8 V
+stroke
+LTb
+0.58 0.00 0.83 C 3676 933 M
+-43 8 V
+stroke
+LTb
+0.58 0.00 0.83 C 2565 932 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 2315 979 M
+stroke
+LTb
+0.58 0.00 0.83 C 2565 932 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4264 950 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4307 974 M
+stroke
+LTb
+0.58 0.00 0.83 C 3196 2028 M
+0 -1054 V
+stroke
+LTb
+0.58 0.00 0.83 C 2587 944 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 2630 968 M
+stroke
+LTb
+0.58 0.00 0.83 C 4473 943 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4745 909 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4495 955 M
+stroke
+LTb
+0.58 0.00 0.83 C 4745 909 M
+-250 46 V
+stroke
+LTb
+0.00 0.62 0.45 C 3633 909 M
+-21 4 V
+stroke
+LTb
+0.58 0.00 0.83 C 1696 2195 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 1967 2161 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4242 939 M
+22 11 V
+stroke
+LTb
+0.58 0.00 0.83 C 4264 950 M
+stroke
+LTb
+0.58 0.00 0.83 C 2796 937 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3068 903 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 2818 949 M
+stroke
+LTb
+0.58 0.00 0.83 C 3068 903 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3676 933 M
+21 11 V
+stroke
+LTb
+0.58 0.00 0.83 C 3697 944 M
+stroke
+LTb
+0.58 0.00 0.83 C 2565 932 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2587 944 M
+stroke
+LTb
+0.58 0.00 0.83 C 4431 920 M
+42 23 V
+stroke
+LTb
+0.58 0.00 0.83 C 4723 897 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4473 943 M
+stroke
+LTb
+0.58 0.00 0.83 C 4723 897 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3612 897 M
+-249 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3363 2011 M
+0 -1068 V
+stroke
+LTb
+0.58 0.00 0.83 C 1946 2149 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4242 939 M
+stroke
+LTb
+0.58 0.00 0.83 C 2753 913 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 3046 891 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 2796 937 M
+stroke
+LTb
+0.58 0.00 0.83 C 3046 891 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3633 909 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 3676 933 M
+stroke
+LTb
+0.58 0.00 0.83 C 2565 932 M
+stroke
+LTb
+0.58 0.00 0.83 C 4409 908 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4681 873 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4431 920 M
+stroke
+LTb
+0.58 0.00 0.83 C 4681 873 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4114 867 M
+-64 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4114 867 M
+-64 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2732 901 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3004 867 M
+-251 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 2753 913 M
+stroke
+LTb
+0.58 0.00 0.83 C 3004 867 M
+-251 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4723 897 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4745 909 M
+stroke
+LTb
+0.00 0.62 0.45 C 3633 1976 M
+0 -1067 V
+stroke
+LTb
+0.58 0.00 0.83 C 4659 861 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4409 908 M
+stroke
+LTb
+0.58 0.00 0.83 C 4659 861 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 1946 2149 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3046 891 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3068 903 M
+stroke
+LTb
+0.58 0.00 0.83 C 4093 855 M
+-43 8 V
+stroke
+LTb
+0.58 0.00 0.83 C 4093 855 M
+-43 8 V
+stroke
+LTb
+0.58 0.00 0.83 C 2982 855 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 2732 901 M
+stroke
+LTb
+0.58 0.00 0.83 C 2982 855 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4681 873 M
+42 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4723 897 M
+stroke
+LTb
+0.58 0.00 0.83 C 3612 1964 M
+0 -1067 V
+stroke
+LTb
+0.58 0.00 0.83 C 3004 867 M
+42 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 3046 891 M
+stroke
+LTb
+0.00 0.62 0.45 C 4050 831 M
+-21 4 V
+stroke
+LTb
+0.58 0.00 0.83 C 4659 861 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4681 873 M
+stroke
+LTb
+0.58 0.00 0.83 C 3213 860 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3484 825 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3234 872 M
+stroke
+LTb
+0.58 0.00 0.83 C 3484 825 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4093 855 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4114 867 M
+stroke
+LTb
+0.58 0.00 0.83 C 2982 855 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3004 867 M
+stroke
+LTb
+0.58 0.00 0.83 C 4029 819 M
+-251 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1952 M
+0 -1086 V
+stroke
+LTb
+0.58 0.00 0.83 C 4659 861 M
+stroke
+LTb
+0.58 0.00 0.83 C 3170 836 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 3463 813 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3213 860 M
+stroke
+LTb
+0.58 0.00 0.83 C 3463 813 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4050 831 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4093 855 M
+stroke
+LTb
+0.58 0.00 0.83 C 2982 855 M
+stroke
+LTb
+0.58 0.00 0.83 C 4259 824 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4531 790 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4281 836 M
+stroke
+LTb
+0.58 0.00 0.83 C 4531 790 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3149 824 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3420 789 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3170 836 M
+stroke
+LTb
+0.58 0.00 0.83 C 3420 789 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 2112 2241 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2384 2207 M
+-250 46 V
+stroke
+LTb
+0.00 0.62 0.45 C 4050 1918 M
+0 -1087 V
+stroke
+LTb
+0.58 0.00 0.83 C 3463 813 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3484 825 M
+stroke
+LTb
+0.58 0.00 0.83 C 4217 800 M
+42 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4509 778 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4259 824 M
+stroke
+LTb
+0.58 0.00 0.83 C 4509 778 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3399 778 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3149 824 M
+stroke
+LTb
+0.58 0.00 0.83 C 3399 778 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 2362 2195 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4029 1906 M
+0 -1087 V
+stroke
+LTb
+0.58 0.00 0.83 C 3420 789 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 3463 813 M
+stroke
+LTb
+0.58 0.00 0.83 C 4195 788 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4467 754 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4217 800 M
+stroke
+LTb
+0.58 0.00 0.83 C 4467 754 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3629 782 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3900 748 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3650 794 M
+stroke
+LTb
+0.58 0.00 0.83 C 3900 748 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4509 778 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4531 790 M
+stroke
+LTb
+0.58 0.00 0.83 C 3399 778 M
+21 11 V
+stroke
+LTb
+0.58 0.00 0.83 C 3420 789 M
+stroke
+LTb
+0.58 0.00 0.83 C 4445 742 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4195 788 M
+stroke
+LTb
+0.58 0.00 0.83 C 4445 742 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 2362 2195 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3587 759 M
+42 23 V
+stroke
+LTb
+0.58 0.00 0.83 C 3879 736 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3629 782 M
+stroke
+LTb
+0.58 0.00 0.83 C 3879 736 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4467 754 M
+42 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4509 778 M
+stroke
+LTb
+0.58 0.00 0.83 C 3399 778 M
+stroke
+LTb
+0.58 0.00 0.83 C 3566 747 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3836 712 M
+-249 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3587 759 M
+stroke
+LTb
+0.58 0.00 0.83 C 3836 712 M
+-249 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4445 742 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4467 754 M
+stroke
+LTb
+0.58 0.00 0.83 C 2529 2167 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 2801 2132 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3879 736 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3900 748 M
+stroke
+LTb
+0.58 0.00 0.83 C 3815 700 M
+-249 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3566 747 M
+stroke
+LTb
+0.58 0.00 0.83 C 3815 700 M
+-249 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4445 742 M
+stroke
+LTb
+0.58 0.00 0.83 C 2779 2120 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3836 712 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 3879 736 M
+stroke
+LTb
+0.58 0.00 0.83 C 4046 705 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4317 670 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4067 717 M
+stroke
+LTb
+0.58 0.00 0.83 C 4317 670 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3815 700 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3836 712 M
+stroke
+LTb
+0.58 0.00 0.83 C 2779 2120 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4003 681 M
+43 24 V
+stroke
+LTb
+0.58 0.00 0.83 C 4296 658 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4046 705 M
+stroke
+LTb
+0.58 0.00 0.83 C 4296 658 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3815 700 M
+stroke
+LTb
+0.58 0.00 0.83 C 2946 2075 M
+21 11 V
+stroke
+LTb
+0.58 0.00 0.83 C 3217 2040 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3981 669 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4253 635 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4003 681 M
+stroke
+LTb
+0.58 0.00 0.83 C 4253 635 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4296 658 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4317 670 M
+stroke
+LTb
+0.58 0.00 0.83 C 3196 2028 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4231 623 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3981 669 M
+stroke
+LTb
+0.58 0.00 0.83 C 4231 623 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4253 635 M
+43 23 V
+stroke
+LTb
+0.58 0.00 0.83 C 4296 658 M
+stroke
+LTb
+0.58 0.00 0.83 C 3196 2028 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4231 623 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4253 635 M
+stroke
+LTb
+0.58 0.00 0.83 C 4231 623 M
+stroke
+LTb
+0.58 0.00 0.83 C 1065 3043 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 1336 3009 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 1315 2997 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 3363 2011 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3633 1976 M
+-249 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 3612 1964 M
+-249 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 1315 2997 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3612 1964 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 3778 1952 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4050 1918 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4029 1906 M
+-251 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4029 1906 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4687 3013 M
+22 11 V
+stroke
+LTb
+0.58 0.00 0.83 C 4959 2978 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4937 2966 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4623 2993 M
+21 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4894 2958 M
+-250 47 V
+stroke
+LTb
+0.58 0.00 0.83 C 4937 2966 M
+22 12 V
+stroke
+LTb
+0.58 0.00 0.83 C 4873 2947 M
+-250 46 V
+stroke
+LTb
+0.58 0.00 0.83 C 4873 2947 M
+21 11 V
+% End plot #1
+% Begin plot #2
+stroke
+LCb setrgbcolor
+/Helvetica findfont 140 scalefont setfont
+/vshift -46 def
+5599 4556 M
+("log/gnuplot/xlatency" using 1:2:3) Rshow
+1.000 UL
+LTb
+0.58 0.00 0.83 C 0.58 0.00 0.83 C 5683 4556 M
+399 0 V
+% End plot #2
+% Begin plot #3
+stroke
+LTb
+0.58 0.00 0.83 C % End plot #3
+% Begin plot #4
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #4
+% Begin plot #5
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #5
+% Begin plot #6
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #6
+% Begin plot #7
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #7
+% Begin plot #8
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #8
+% Begin plot #9
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #9
+% Begin plot #10
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #10
+% Begin plot #11
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #11
+% Begin plot #12
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #12
+% Begin plot #13
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #13
+% Begin plot #14
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #14
+% Begin plot #15
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #15
+% Begin plot #16
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #16
+% Begin plot #17
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #17
+% Begin plot #18
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #18
+% Begin plot #19
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #19
+% Begin plot #20
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #20
+% Begin plot #21
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #21
+% Begin plot #22
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #22
+% Begin plot #23
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #23
+% Begin plot #24
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #24
+% Begin plot #25
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #25
+% Begin plot #26
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #26
+% Begin plot #27
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #27
+% Begin plot #28
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #28
+% Begin plot #29
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #29
+% Begin plot #30
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #30
+% Begin plot #31
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #31
+% Begin plot #32
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #32
+% Begin plot #33
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #33
+% Begin plot #34
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #34
+% Begin plot #35
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #35
+% Begin plot #36
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #36
+% Begin plot #37
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #37
+% Begin plot #38
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #38
+% Begin plot #39
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #39
+% Begin plot #40
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #40
+% Begin plot #41
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #41
+% Begin plot #42
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #42
+% Begin plot #43
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #43
+% Begin plot #44
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #44
+% Begin plot #45
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #45
+% Begin plot #46
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #46
+% Begin plot #47
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #47
+% Begin plot #48
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #48
+% Begin plot #49
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #49
+% Begin plot #50
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #50
+% Begin plot #51
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #51
+% Begin plot #52
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #52
+% Begin plot #53
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #53
+% Begin plot #54
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #54
+% Begin plot #55
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #55
+% Begin plot #56
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #56
+% Begin plot #57
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #57
+% Begin plot #58
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #58
+% Begin plot #59
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #59
+% Begin plot #60
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #60
+% Begin plot #61
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #61
+% Begin plot #62
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #62
+% Begin plot #63
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #63
+% Begin plot #64
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #64
+% Begin plot #65
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #65
+% Begin plot #66
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #66
+% Begin plot #67
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #67
+% Begin plot #68
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #68
+% Begin plot #69
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #69
+% Begin plot #70
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #70
+% Begin plot #71
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #71
+% Begin plot #72
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #72
+% Begin plot #73
+1.000 UL
+LTb
+0.58 0.00 0.83 C % End plot #73
+1.000 UL
+LTb
+LCb setrgbcolor
+4304 601 M
+6229 1674 L
+stroke
+LTb
+LCb setrgbcolor
+4304 601 M
+971 1221 L
+stroke
+LTb
+LCb setrgbcolor
+2655 2159 M
+241 135 V
+stroke
+LTb
+LCb setrgbcolor
+2384 2008 M
+145 81 V
+stroke
+LTb
+LCb setrgbcolor
+1967 1776 M
+145 81 V
+stroke
+LTb
+LCb setrgbcolor
+1336 1424 M
+360 201 V
+stroke
+LTb
+LCb setrgbcolor
+971 1221 M
+94 52 V
+stroke
+LTb
+LCb setrgbcolor
+4623 1973 M
+2896 2294 L
+stroke
+LTb
+LCb setrgbcolor
+6229 1674 M
+4959 1910 L
+stroke
+LTb
+LCb setrgbcolor
+971 3366 M
+0 -2145 V
+stroke
+LTb
+LCb setrgbcolor
+971 1221 M
+49 27 V
+stroke
+LTb
+LCb setrgbcolor
+2847 2266 M
+49 28 V
+stroke
+906 1160 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 0)]
+] -46.7 MCshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+1388 1143 M
+49 28 V
+stroke
+LTb
+LCb setrgbcolor
+3264 2189 M
+49 27 V
+stroke
+1322 1083 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 1)]
+] -46.7 MCshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+1804 1066 M
+49 27 V
+stroke
+LTb
+LCb setrgbcolor
+3680 2112 M
+48 27 V
+stroke
+1739 1005 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 2)]
+] -46.7 MCshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+2221 988 M
+49 28 V
+stroke
+LTb
+LCb setrgbcolor
+4096 2034 M
+49 27 V
+stroke
+2156 928 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 3)]
+] -46.7 MCshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+2638 911 M
+49 27 V
+stroke
+LTb
+LCb setrgbcolor
+4513 1957 M
+49 27 V
+stroke
+2573 850 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 4)]
+] -46.7 MCshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+3055 834 M
+49 27 V
+stroke
+LTb
+LCb setrgbcolor
+4959 1895 M
+20 12 V
+stroke
+2990 773 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 5)]
+] -46.7 MCshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+3472 756 M
+48 27 V
+stroke
+LTb
+LCb setrgbcolor
+5347 1802 M
+49 27 V
+stroke
+3406 695 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 6)]
+] -46.7 MCshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+3887 679 M
+49 27 V
+stroke
+LTb
+LCb setrgbcolor
+5763 1724 M
+49 28 V
+stroke
+3822 618 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 7)]
+] -46.7 MCshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+4304 601 M
+49 28 V
+stroke
+LTb
+LCb setrgbcolor
+6180 1647 M
+49 27 V
+stroke
+4239 541 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 8)]
+] -46.7 MCshow
+1.000 UL
+LTb
+LCb setrgbcolor
+LCb setrgbcolor
+2157 643 M
+[ [(Helvetica) 140.0 0.0 true true 0 (Routers along X-direction)]
+] -46.7 MCshow
+LTb
+1.000 UL
+LTb
+LCb setrgbcolor
+4304 601 M
+-54 10 V
+stroke
+LTb
+LCb setrgbcolor
+1025 1211 M
+-54 10 V
+stroke
+4377 579 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 0)]
+] -46.7 MCshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+4518 720 M
+-55 11 V
+stroke
+4591 698 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 2)]
+] -46.7 MCshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+4732 840 M
+-55 10 V
+stroke
+LTb
+LCb setrgbcolor
+1453 1449 M
+-54 10 V
+stroke
+4805 817 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 4)]
+] -46.7 MCshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+4946 959 M
+-55 10 V
+stroke
+LTb
+LCb setrgbcolor
+1667 1568 M
+-54 10 V
+stroke
+5019 936 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 6)]
+] -46.7 MCshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+5160 1078 M
+-55 10 V
+stroke
+5232 1056 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 8)]
+] -46.7 MCshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+5374 1197 M
+-55 10 V
+stroke
+LTb
+LCb setrgbcolor
+2095 1807 M
+-55 10 V
+stroke
+5446 1175 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 10)]
+] -46.7 MCshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+5587 1317 M
+-54 10 V
+stroke
+5660 1294 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 12)]
+] -46.7 MCshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+5801 1436 M
+-54 10 V
+stroke
+LTb
+LCb setrgbcolor
+2523 2045 M
+-55 10 V
+stroke
+5874 1413 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 14)]
+] -46.7 MCshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+6015 1555 M
+-54 10 V
+stroke
+LTb
+LCb setrgbcolor
+2737 2164 M
+-55 11 V
+stroke
+6088 1532 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 16)]
+] -46.7 MCshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+6229 1674 M
+-54 10 V
+stroke
+LTb
+LCb setrgbcolor
+2950 2284 M
+-54 10 V
+stroke
+6302 1652 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 18)]
+] -46.7 MCshow
+1.000 UL
+LTb
+LCb setrgbcolor
+LCb setrgbcolor
+6100 983 M
+[ [(Helvetica) 140.0 0.0 true true 0 (Routers along Y-direction)]
+] -46.7 MCshow
+LTb
+1.000 UL
+LTb
+LCb setrgbcolor
+1034 1221 M
+-63 0 V
+stroke
+845 1221 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 0)]
+] -46.7 MRshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+1034 1489 M
+-63 0 V
+stroke
+845 1489 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 2)]
+] -46.7 MRshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+1034 1757 M
+-63 0 V
+stroke
+845 1757 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 4)]
+] -46.7 MRshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+1034 2025 M
+-63 0 V
+stroke
+845 2025 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 6)]
+] -46.7 MRshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+1034 2294 M
+-63 0 V
+stroke
+845 2294 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 8)]
+] -46.7 MRshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+1034 2561 M
+-63 0 V
+stroke
+845 2561 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 10)]
+] -46.7 MRshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+1034 2829 M
+-63 0 V
+stroke
+845 2829 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 12)]
+] -46.7 MRshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+1034 3098 M
+-63 0 V
+stroke
+845 3098 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 14)]
+] -46.7 MRshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+1034 3366 M
+-63 0 V
+stroke
+845 3366 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 16)]
+] -46.7 MRshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UP
+stroke
+grestore
+end
+showpage
+%%Trailer
+%%DocumentFonts: Helvetica
